@@ -23,9 +23,15 @@ function myFill(arr, value, startIndex = 0, endIndex = undefined) {
   return arr;
 }
 
+console.log('myFill', myFill([1, 2, 3, 4, 5], '*', -3, -1));
+
 function myPop(arr) {
   return arr.splice(arr.length - 1)[0];
 }
+
+const myPopArray = [1, 2, 3, 4, 5];
+console.log('myPop', myPop(myPopArray));
+console.log('myPopArray', myPopArray);
 
 function myPush(arr) {
   if (!Array.isArray(arr)) {
@@ -40,6 +46,10 @@ function myPush(arr) {
   return arr.length;
 }
 
+const myPushArray = [1, 2, 3, 4, 5];
+console.log('myPush', myPush(myPushArray, 999));
+console.log('myPushArray', myPushArray);
+
 function myReverse(arr) {
   if (arr.length === 0) return arr;
   const originalArrayValues = [...arr];
@@ -49,6 +59,10 @@ function myReverse(arr) {
   }
   return arr;
 }
+
+const myReverseArray = [1, 2, 3, 4, 5, 6];
+console.log('myReverse', myReverse(myReverseArray));
+console.log('myReverseArray', myReverseArray);
 
 function myShift(arr) {
   if (arr.length === 0) return undefined;
@@ -61,6 +75,10 @@ function myShift(arr) {
   return originalArrayValues[0];
 }
 
+const myShiftArray = [1, 2, 3, 4, 5];
+console.log('myShift', myShift(myShiftArray));
+console.log('myShiftArray', myShiftArray);
+
 function myUnshift(arr) {
   if (!Array.isArray(arr)) {
       throw new Error('required argument should be array');
@@ -71,6 +89,10 @@ function myUnshift(arr) {
   return arr.length;
 }
 
+const myUnshiftArray = [1, 2, 3, 4, 5, 6, 7];
+console.log('myUnshift', myUnshift(myUnshiftArray, 'q', 'b'));
+console.log('myUnshiftArray', myUnshiftArray);
+
 function myJoin(arr, separator = '') {
   let returnValue = '';
   if (!arr) {
@@ -79,3 +101,6 @@ function myJoin(arr, separator = '') {
   arr.forEach(v => (returnValue += `${v}${separator}`));
   return returnValue;
 }
+
+console.log('myJoin', myJoin([1, 2, 3, 4, 5, 6], ' - '));
+
