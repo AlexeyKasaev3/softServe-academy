@@ -31,6 +31,8 @@ function myLastIndexOf(str, subStr, fromIndex) {
   return -1;
 }
 
+console.log(myLastIndexOf('qwertyuiop', 'io', -1))
+
 function myConcat() {
   return [...arguments].map(value => String(value)).join('');
 }
