@@ -114,17 +114,17 @@ function isSolved(board) {
   return 0;
 }
 
-var board = [[0, 0, 1], [0, 1, 2], [2, 1, 0]];
-console.log(isSolved(board) === -1);
+const board1 = [[0, 0, 1], [0, 1, 2], [2, 1, 0]];
+console.log(isSolved(board1) === -1);
 
-var board = [[0, 0, 1], [0, 1, 1], [2, 1, 1]];
-console.log(isSolved(board) === 1);
+const board2 = [[0, 0, 1], [0, 1, 1], [2, 1, 1]];
+console.log(isSolved(board2) === 1);
 
-var board = [[2, 0, 1], [0, 2, 2], [2, 1, 2]];
-console.log(isSolved(board) === 2);
+const board3 = [[2, 0, 1], [0, 2, 2], [2, 1, 2]];
+console.log(isSolved(board3) === 2);
 
-var board = [[2, 2, 1], [1, 1, 2], [2, 1, 1]];
-console.log(isSolved(board) === 0);
+const board4 = [[2, 2, 1], [1, 1, 2], [2, 1, 1]];
+console.log(isSolved(board4) === 0);
 
 
 ///////////////////////////////////////////////////
