@@ -10,7 +10,6 @@ function getPartition(num) {
         const nextBaseNum = currentPartition[0] - 1;
         const baseNumRepeat = Math.floor(num / nextBaseNum);
         const remainder = num % nextBaseNum;
-        const nextPartition = [];
         const nextPartition = new Array(baseNumRepeat).fill(nextBaseNum);
         if (remainder) {
           nextPartition.push(remainder);
