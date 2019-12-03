@@ -11,9 +11,7 @@ function getPartition(num) {
         const baseNumRepeat = Math.floor(num / nextBaseNum);
         const remainder = num % nextBaseNum;
         const nextPartition = [];
-        for (let k = 0; k < baseNumRepeat; k += 1) {
-          nextPartition.push(nextBaseNum);
-        }
+        const nextPartition = new Array(baseNumRepeat).fill(nextBaseNum);
         if (remainder) {
           nextPartition.push(remainder);
         }
