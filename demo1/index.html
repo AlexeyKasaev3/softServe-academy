@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SoftServe Demo</title>
+  </head>
+  <body>
+    <section class="titleSection">
+      <div class="contentWrapper">
+        <h1>SoftServe Academy demo 1</h1>
+        <nav id="navigation">
+          <div id="chessboardLink" data-to="chessboard">Chess Board</div>
+          <div id="envelopesLink" data-to="envelopes">Envelopes</div>
+          <div id="trianglesLink" data-to="triangles">Triangles</div>
+          <div id="palindromeLink" data-to="palindrome">Palindrome</div>
+          <div id="happyTicketsLink" data-to="happyTickets">Happy Tickets</div>
+          <div id="numericalSequenceLink" data-to="numericalSequence">
+            Numerical Sequence
+          </div>
+          <div id="fibonacciRangeLink" data-to="fibonacciRange">
+            Fibonacci Range
+          </div>
+        </nav>
+        <div class="author">by Alexey Kasaev</div>
+      </div>
+    </section>
+    <section id="taskContainer" class="tasksContainer">
+      <!-- Chessboard -->
+      <section id="chessboard" class="taskSection">
+        <div>
+          <h1>Chess Board</h1>
+          <form>
+            <label>
+              Rows
+              <input type="text" name="rows" />
+            </label>
+            <label>
+              Cols
+              <input type="text" name="cols" />
+            </label>
+            <label>
+              Symbol
+              <input type="text" name="symbol" />
+            </label>
+            <div class="formButtons">
+              <button type="submit">Apply</button>
+              <button type="reset">Clear</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="result">Waiting form submitting</div>
+        </div>
+      </section>
+      <!-- Envelopes -->
+      <section id="envelopes" class="taskSection">
+        <div>
+          <h1>Envelopes</h1>
+          <form>
+            <label>
+              1-A, 1-B
+              <input type="text" name="envelope1sides" />
+            </label>
+            <label>
+              2-C, 2-D
+              <input type="text" name="envelope2sides" />
+            </label>
+            <div class="formButtons">
+              <button type="submit">Apply</button>
+              <button type="reset">Clear</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="result">Waiting form submitting</div>
+        </div>
+      </section>
+      <!-- Triangles -->
+      <section id="triangles" class="taskSection">
+        <div>
+          <h1>Triangles</h1>
+          <form>
+            <label>
+              Triangle 1 name
+              <input type="text" name="triangle1name" />
+            </label>
+            <label>
+              Triangle 1 sides
+              <input type="text" name="triangle1sides" />
+            </label>
+            <label>
+              Triangle 2 name
+              <input type="text" name="triangle2name" />
+            </label>
+            <label>
+              Triangle 2 sides
+              <input type="text" name="triangle2sides" />
+            </label>
+            <label>
+              Triangle 3 name
+              <input type="text" name="triangle3name" />
+            </label>
+            <label>
+              Triangle 3 sides
+              <input type="text" name="triangle3sides" />
+            </label>
+            <div class="formButtons">
+              <button type="submit">Apply</button>
+              <button type="reset">Clear</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="result">Waiting form submitting</div>
+        </div>
+      </section>
+      <!-- Palindrome -->
+      <section id="palindrome" class="taskSection">
+        <div>
+          <h1>Palindrome</h1>
+          <form>
+            <label>
+              Number
+              <input type="text" name="number" />
+            </label>
+            <div class="formButtons">
+              <button type="submit">Apply</button>
+              <button type="reset">Clear</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="result">Waiting form submitting</div>
+        </div>
+      </section>
+      <!-- Happy Tickets -->
+      <section id="happyTickets" class="taskSection">
+        <div>
+          <h1>Happy Tickets</h1>
+          <form>
+            <label>
+              Min
+              <input type="text" name="min" />
+            </label>
+            <label>
+              Max
+              <input type="text" name="max" />
+            </label>
+            <div class="formButtons">
+              <button type="submit">Apply</button>
+              <button type="reset">Clear</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="result">Waiting form submitting</div>
+        </div>
+      </section>
+      <!-- Numerical Sequence -->
+      <section id="numericalSequence" class="taskSection">
+        <div>
+          <h1>Numerical Sequence</h1>
+          <form>
+            <label>
+              Series length
+              <input type="text" name="seriesLength" />
+            </label>
+            <label>
+              Squared number
+              <input type="text" name="squaredNumber" />
+            </label>
+            <div class="formButtons">
+              <button type="submit">Apply</button>
+              <button type="reset">Clear</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="result">Waiting form submitting</div>
+        </div>
+      </section>
+      <!-- Fibonacci Range -->
+      <section id="fibonacciRange" class="taskSection">
+        <div>
+          <h1>Fibonacci Range</h1>
+          <form>
+            <label>
+              Min/Number Length
+              <input type="text" name="min" />
+            </label>
+            <label>
+              Max
+              <input type="text" name="max" />
+            </label>
+            <div class="formButtons">
+              <button type="submit">Apply</button>
+              <button type="reset">Clear</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="result">Waiting form submitting</div>
+        </div>
+      </section>
+    </section>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
