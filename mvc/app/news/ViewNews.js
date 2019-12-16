@@ -6,7 +6,7 @@ export class ViewNews {
         this.domNews = document.querySelector('.news');
         this.btnSearch = document.querySelector('.btn__search');
         //this.templater = SingletonTemplater('/app/news/templateNews.html');
-        this.templater = Templater('/mvc/app/news/templateNews.html');
+        this.templater = Templater('https://alexeykasaev3.github.io/softServe-academy/mvc/app/news/templateNews.html');
     }
 
     renderNews(news) {
