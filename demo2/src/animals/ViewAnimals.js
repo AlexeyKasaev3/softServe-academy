@@ -3,11 +3,6 @@ import { Templater } from "../share/Templater.js";
 export class ViewAnimals {
   constructor() {
     this.domAnimalsGrid = document.querySelector(".columns");
-    this.btnSearch = document.querySelector(".btn__search");
-    //this.templater = SingletonTemplater('/app/news/templateNews.html');
-    this.animalsGrid = Templater.getInstance(
-      "/src/animals/animalGridTemplate.html"
-    );
     //this.animalsCard = Templater.getInstance('/src/animals/animalCardTemplate.html')
     this.animalsCard = Templater.getInstance('https://alexeykasaev3.github.io/softServe-academy/demo2/src/animals/animalCardTemplate.html')
   }
