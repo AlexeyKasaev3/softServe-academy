@@ -9,7 +9,8 @@ let animals = [
     id: 1,
     birth_date: 1544047200000,
     is_sterile: true,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/1.jpg",
     color: "white"
   },
   {
@@ -22,7 +23,8 @@ let animals = [
     id: 2,
     birth_date: 1544047200000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/2.jpg",
     color: "white"
   },
   {
@@ -35,7 +37,8 @@ let animals = [
     id: 3,
     birth_date: 1544047200000,
     is_sterile: true,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/3.jpg",
     color: "orange"
   },
   {
@@ -48,7 +51,8 @@ let animals = [
     id: 4,
     birth_date: 1544047200000,
     is_sterile: true,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/4.jpg",
     color: "brown"
   },
   {
@@ -61,7 +65,8 @@ let animals = [
     id: 5,
     birth_date: 1576015200000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/5.jpg",
     color: "brown"
   },
   {
@@ -74,7 +79,8 @@ let animals = [
     id: 6,
     birth_date: 1576015200000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/6.jpg",
     color: "orange"
   },
   {
@@ -87,7 +93,8 @@ let animals = [
     id: 7,
     birth_date: 1425247200000,
     is_sterile: true,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/7.jpg",
     color: "gray"
   },
   {
@@ -100,7 +107,8 @@ let animals = [
     id: 8,
     birth_date: 1444424400000,
     is_sterile: true,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/8.jpg",
     color: "gray"
   },
   {
@@ -113,7 +121,8 @@ let animals = [
     id: 9,
     birth_date: 1575842400000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/9.jpg",
     color: "gray"
   },
   {
@@ -126,7 +135,8 @@ let animals = [
     id: 10,
     birth_date: 1575842400000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/10.jpg",
     color: "gray"
   },
   {
@@ -140,7 +150,8 @@ let animals = [
     id: 11,
     birth_date: 1544047200000,
     is_sterile: true,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/11.jpg",
     color: "orange"
   },
   {
@@ -154,7 +165,8 @@ let animals = [
     id: 12,
     birth_date: 1544047200000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/12.jpg",
     color: "black"
   },
   {
@@ -168,7 +180,8 @@ let animals = [
     id: 13,
     birth_date: 1544047200000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/13.jpg",
     color: "brown"
   },
   {
@@ -182,7 +195,8 @@ let animals = [
     id: 14,
     birth_date: 1491426000000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/14.jpg",
     color: "black-white"
   },
   {
@@ -196,7 +210,8 @@ let animals = [
     id: 15,
     birth_date: 1544047200000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/15.jpg",
     color: "black-white"
   },
   {
@@ -210,7 +225,8 @@ let animals = [
     id: 16,
     birth_date: 1544047200000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/16.jpg",
     color: "black-white"
   },
   {
@@ -224,7 +240,8 @@ let animals = [
     id: 17,
     birth_date: 1575928800000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/17.jpg",
     color: "white-brown"
   },
   {
@@ -238,7 +255,8 @@ let animals = [
     id: 18,
     birth_date: 1293832800000,
     is_sterile: true,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/18.jpg",
     color: "white-brown"
   },
   {
@@ -252,7 +270,8 @@ let animals = [
     id: 19,
     birth_date: 1575583200000,
     is_sterile: false,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/19.jpg",
     color: "brown"
   },
   {
@@ -266,7 +285,8 @@ let animals = [
     id: 20,
     birth_date: 1544047200000,
     is_sterile: true,
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/20.jpg",
     color: "orange"
   },
   {
@@ -281,7 +301,8 @@ let animals = [
     birth_date: 1554930000000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/21.jpg",
     color: "orange-black"
   },
   {
@@ -296,7 +317,8 @@ let animals = [
     birth_date: 1554930000000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/22.jpg",
     color: "orange-black"
   },
   {
@@ -311,7 +333,8 @@ let animals = [
     birth_date: 1554930000000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/23.jpg",
     color: "orange-black"
   },
   {
@@ -326,7 +349,8 @@ let animals = [
     birth_date: 1554843600000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/24.jpg",
     color: "red"
   },
   {
@@ -341,7 +365,8 @@ let animals = [
     birth_date: 1554843600000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/25.jpg",
     color: "red-black"
   },
   {
@@ -356,7 +381,8 @@ let animals = [
     birth_date: 1554843600000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/26.jpg",
     color: "red"
   },
   {
@@ -371,7 +397,8 @@ let animals = [
     birth_date: 1576015200000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/27.jpg",
     color: "white"
   },
   {
@@ -386,7 +413,8 @@ let animals = [
     birth_date: 1576015200000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/28.jpg",
     color: "white-red"
   },
   {
@@ -401,7 +429,8 @@ let animals = [
     birth_date: 1576015200000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/29.jpg",
     color: "white-red"
   },
   {
@@ -416,7 +445,8 @@ let animals = [
     birth_date: 1576015200000,
     is_sterile: false,
     water_type: "limnetic",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/30.jpg",
     color: "white"
   },
   {
@@ -430,7 +460,8 @@ let animals = [
     birth_date: 1544047200000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/31.jpg",
     color: "green"
   },
   {
@@ -444,7 +475,8 @@ let animals = [
     birth_date: 1539118800000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/32.jpg",
     color: "green"
   },
   {
@@ -458,7 +490,8 @@ let animals = [
     birth_date: 1544047200000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/33.jpg",
     color: "gray-red"
   },
   {
@@ -472,7 +505,8 @@ let animals = [
     birth_date: 1544047200000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/34.jpg",
     color: "yellow"
   },
   {
@@ -486,7 +520,8 @@ let animals = [
     birth_date: 1544047200000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/35.jpg",
     color: "red"
   },
   {
@@ -500,7 +535,8 @@ let animals = [
     birth_date: 1570654800000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/36.jpg",
     color: "yellow-black"
   },
   {
@@ -514,7 +550,8 @@ let animals = [
     birth_date: 1570741200000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/37.jpg",
     color: "gray"
   },
   {
@@ -528,7 +565,8 @@ let animals = [
     birth_date: 1572732000000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/38.jpg",
     color: "gray"
   },
   {
@@ -542,7 +580,8 @@ let animals = [
     birth_date: 1554584400000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/39.jpg",
     color: "gray"
   },
   {
@@ -556,9 +595,15 @@ let animals = [
     birth_date: 1554584400000,
     is_sterile: false,
     activity: "day",
-    image: "",
+    image:
+      "https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/40.jpg",
     color: "gray"
   }
 ];
+
+animals.forEach((animal, i) => {
+  animal.image = `https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/${i +
+    1}.jpg`;
+});
 
 console.log(JSON.stringify(animals));
