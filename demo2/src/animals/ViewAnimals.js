@@ -8,7 +8,8 @@ export class ViewAnimals {
     this.animalsGrid = Templater.getInstance(
       "/src/animals/animalGridTemplate.html"
     );
-    this.animalsCard = Templater.getInstance('/src/animals/animalCardTemplate.html')
+    //this.animalsCard = Templater.getInstance('/src/animals/animalCardTemplate.html')
+    this.animalsCard = Templater.getInstance('https://alexeykasaev3.github.io/softServe-academy/demo2/src/animals/animalCardTemplate.html')
   }
 
   renderAnimalsGrid(animals) {
