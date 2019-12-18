@@ -1,4 +1,4 @@
-class Templater {
+export class Templater {
   constructor(url) {
     this.url = url;
     this.templateStr = "";
