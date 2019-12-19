@@ -27,6 +27,6 @@ export class AnimalsTemplate {
   }
 
   getCardsGridTemplate() {
-    return `<div class="columns is-multiline"></div>`;
+    return `<div class="section"><div class="container"><div class="columns is-multiline"></div></div></div>`;
   }
 }
