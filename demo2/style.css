@@ -37,22 +37,26 @@ body {
   border-radius: 290486px;
   background: white;
   border: none;
-  box-shadow: 0 5px 20px #dadada;
+  box-shadow: 0 5px 20px #8a8a8a;
   height: 60px;
-  color: #9c9c9c;
+  color: #656565;
   padding: 10px 30px !important;
 }
 
 .section .container .pagination-link {
   background: white;
   border: none;
-  box-shadow: 0 5px 20px #dadada;
+  box-shadow: 0 5px 20px #8a8a8a;
   width: 60px;
   height: 60px;
-  color: #9c9c9c;
+  color: #656565;
 }
 
 .section .container .is-current {
   color: #fff !important;
   background: #b1ae8e !important;
+}
+
+.section .container .pagination-ellipsis {
+  color: #656565;
 }
