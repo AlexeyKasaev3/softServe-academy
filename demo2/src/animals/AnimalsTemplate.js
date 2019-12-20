@@ -6,7 +6,9 @@ export class AnimalsTemplate {
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
+        <div class="kaa-card-image-container">
           <img src="${image}" alt="Placeholder image">
+          </div>
         </figure>
       </div>
       <div class="card-content">
@@ -27,6 +29,11 @@ export class AnimalsTemplate {
   }
 
   getCardsGridTemplate() {
-    return `<div class="section"><div class="container"><div class="columns is-multiline"></div></div></div>`;
+    return `<div class="section">
+    <div class="container">
+    <div class="columns is-multiline is-5 is-variable">
+    </div>
+    </div>
+    </div>`;
   }
 }

@@ -1,5 +1,8 @@
 import { ControllerAnimals } from "./animals/ControllerAnimals.js";
+import { Publisher } from './share/Publisher.js';
+import { PaginationController } from "./pagination/PaginationController.js";
 
-const animals = new ControllerAnimals();
+const publisher = new Publisher();
 
-animals.init();
+const animals = new ControllerAnimals(publisher.publisherAPI);
+const pagination = new PaginationController(publisher.publisherAPI)

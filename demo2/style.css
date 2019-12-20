@@ -1,0 +1,58 @@
+body {
+  min-height: 100vh;
+  background: url(images/animal-cards-bg.jpg);
+}
+
+.kaa-card-image-container {
+  box-shadow: 0 0 50px 0 black inset;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.kaa-card-image-container img {
+  width: initial;
+  height: initial;
+  object-fit: cover;
+  opacity: 0.8;
+  filter: grayscale(40%);
+}
+
+.animals-greed .column {
+  padding-bottom: 30px;
+}
+
+.animals-greed .card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 30px #dedede;
+}
+
+.out-of-rich {
+  transform: translateX(-9999px);
+}
+
+.section .container .kaa-pagination-arrow {
+  border-radius: 290486px;
+  background: white;
+  border: none;
+  box-shadow: 0 5px 20px #dadada;
+  height: 60px;
+  color: #9c9c9c;
+  padding: 10px 30px !important;
+}
+
+.section .container .pagination-link {
+  background: white;
+  border: none;
+  box-shadow: 0 5px 20px #dadada;
+  width: 60px;
+  height: 60px;
+  color: #9c9c9c;
+}
+
+.section .container .is-current {
+  color: #fff !important;
+  background: #b1ae8e !important;
+}
