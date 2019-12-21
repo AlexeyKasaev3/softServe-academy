@@ -6,7 +6,7 @@ export class ControllerAnimals {
   constructor(publisherAPI) {
     this.model = new ModelAnimals();
     this.view = new ViewAnimals();
-    this.publisherAPI = publisherAPI
+    this.publisherAPI = publisherAPI;
     this.getAnimals(SITE_SETTINGS.DEFAULT_PAGE_NUMBER);
     this.publisherAPI.subscribe(
       "pagination-page-change",

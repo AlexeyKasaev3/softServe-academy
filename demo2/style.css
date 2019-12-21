@@ -3,6 +3,14 @@ body {
   background: url(images/animal-cards-bg.jpg);
 }
 
+.site-header {
+  background: url('images/pets-logo.png') top center/200px no-repeat;
+}
+
+.site-header .title {
+  padding: 250px 0 50px 0;
+}
+
 .kaa-card-image-container {
   box-shadow: 0 0 50px 0 black inset;
   position: absolute;

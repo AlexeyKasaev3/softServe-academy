@@ -1,5 +1,3 @@
 export class PaginationModel {
-  constructor() {
-    
-  }
+  constructor() {}
 }
