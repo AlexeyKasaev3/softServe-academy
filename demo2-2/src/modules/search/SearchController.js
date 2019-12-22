@@ -5,12 +5,20 @@ export class SearchController {
   constructor(model, publisherAPI) {
     this.model = model;
     this.publisherAPI = publisherAPI;
-    this.view = new SearchView();
+    this.view = new SearchView(this.handleFilterClick.bind(this));
 
-    displaySearchPannel();
+    this.displaySearchPannel();
   }
 
   displaySearchPannel() {
     this.view.parseSearchPannel();
+  }
+
+  handleFilterClick(event) {
+    event.preventDefault();
+    const target = event.target.getAttribute('href');
+    if(target) {
+      this.publisherAPI.notify(siteSettings.event.filterClick, target)
+    }
   }
 }

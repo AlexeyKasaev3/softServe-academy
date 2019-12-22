@@ -2,25 +2,22 @@ export class SearchTemplate {
   constructor() {}
 
   getSearchPanel() {
-    return `<nav class="tabs is-centered is-large has-text-weight-light is-marginless">
+    return `<nav class="tabs filter-tabs is-centered is-large has-text-weight-light is-marginless">
     <ul>
       <li class="is-active">
-        <a>
-          <span class="icon is-small"><i class="fas fa-paw" aria-hidden="true"></i></span>
-          <span>All pets</span>
-        </a>
+        <a href="all">All pets</a>
       </li>
       <li>
-        <a>Cats</a>
+        <a href="cat">Cats</a>
       </li>
       <li>
-        <a>Dogs</a>
+        <a href="dog">Dogs</a>
       </li>
       <li>
-        <a>Birds</a>
+        <a href="bird">Birds</a>
       </li>
       <li>
-        <a>Fish</a>
+        <a href="fish">Fish</a>
       </li>
     </ul>
   </nav>
