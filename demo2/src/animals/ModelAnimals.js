@@ -2,8 +2,7 @@ import { SITE_SETTINGS } from "../share/SiteSettings.js";
 
 export class ModelAnimals {
   constructor() {
-    this.link =
-      "https://maksv21.github.io/softserve/demo2/database/animals_en.json";
+    this.link = "https://maksv21.github.io/softserve/demo2/database/animals_en.json";
     this.animalsPromise = null;
   }
 
@@ -16,9 +15,7 @@ export class ModelAnimals {
       return this.animalsPromise.then(animalsArray => {
         return {
           currentPage: page,
-          totalPagesQuantity: Math.ceil(
-            animalsArray.length / SITE_SETTINGS.CARDS_PER_PAGE
-          ),
+          totalPagesQuantity: Math.ceil(animalsArray.length / SITE_SETTINGS.CARDS_PER_PAGE),
           cards: animalsArray.slice(start, end)
         };
       });
@@ -26,8 +23,6 @@ export class ModelAnimals {
   }
 
   fetchAnimals() {
-    return fetch(this.link).then(
-      response => (this.animalsPromise = response.json())
-    );
+    return fetch(this.link).then(response => (this.animalsPromise = response.json()));
   }
 }

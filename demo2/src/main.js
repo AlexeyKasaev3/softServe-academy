@@ -6,3 +6,7 @@ const publisher = new Publisher();
 
 const animals = new ControllerAnimals(publisher.publisherAPI);
 const pagination = new PaginationController(publisher.publisherAPI)
+
+new SlimSelect({
+  select: '.select-breed'
+})

@@ -1,18 +1,22 @@
-import { PaginationTemplate } from "./PaginationTemplate.js";
+import { siteSettings } from '../../share/siteSettings.js';
+import { PaginationTemplate } from './PaginationTemplate.js'
 
 export class PaginationView {
   constructor(navClickHandler) {
+    this.templater = new PaginationTemplate;
+
     this.paginationDOMparent = document.querySelector(".pagination-container");
     this.template = new PaginationTemplate();
 
-    this.paginationDOMparent.innerHTML = this.template.getPaginationContainer();
+    this.paginationDOMparent.insertAdjacentHTML('afterbegin', this.templater.getPaginationContainer());
     this.paginationButtonsDOMparent = document.querySelector(".pagination-list");
 
     this.paginationDOMparent.addEventListener("click", this.routePaginationPanelClick.bind(this));
     this.navClickHandler = navClickHandler;
+
   }
 
-  parsePagination(currentPage, totalPagesQuantity) {
+  renderPagination(currentPage, totalPagesQuantity) {
     this.currentPage = Number(currentPage);
     this.totalPagesQuantity = Number(totalPagesQuantity);
 

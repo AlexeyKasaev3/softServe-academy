@@ -6,10 +6,7 @@ export class PaginationController {
     this.model = new PaginationModel();
     this.view = new PaginationView(this.navClickHandler.bind(this));
     this.publisherAPI = publisherAPI;
-    this.publisherAPI.subscribe(
-      "animals-page-change",
-      this.handleAnimalsPageChange.bind(this)
-    );
+    this.publisherAPI.subscribe("animals-page-change", this.handleAnimalsPageChange.bind(this));
   }
 
   handleAnimalsPageChange({ currentPage, totalPagesQuantity }) {

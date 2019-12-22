@@ -8,10 +8,7 @@ export class ControllerAnimals {
     this.view = new ViewAnimals();
     this.publisherAPI = publisherAPI;
     this.getAnimals(SITE_SETTINGS.DEFAULT_PAGE_NUMBER);
-    this.publisherAPI.subscribe(
-      "pagination-page-change",
-      this.getAnimals.bind(this)
-    );
+    this.publisherAPI.subscribe("pagination-page-change", this.getAnimals.bind(this));
   }
 
   getAnimals(page = SITE_SETTINGS.DEFAULT_PAGE_NUMBER) {

@@ -5,13 +5,15 @@ export class ViewAnimals {
     this.animalsGreed = document.querySelector(".animals-greed");
     this.animalsTemplate = new AnimalsTemplate();
 
-    this.animalsGreed.innerHTML = this.animalsTemplate.getCardsGridTemplate()
-    this.domAnimalsGrid = document.querySelector('.columns')
+    this.animalsGreed.innerHTML = this.animalsTemplate.getCardsGridTemplate();
+    this.domAnimalsGrid = document.querySelector(".columns");
   }
 
   renderAnimals(animals) {
-    this.domAnimalsGrid.innerHTML = animals.map(animal => {
-      return this.animalsTemplate.getCardTemplate(animal);
-    }).join('');
+    this.domAnimalsGrid.innerHTML = animals
+      .map(animal => {
+        return this.animalsTemplate.getCardTemplate(animal);
+      })
+      .join("");
   }
 }
