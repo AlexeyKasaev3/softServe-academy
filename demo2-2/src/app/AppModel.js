@@ -18,13 +18,16 @@ export class AppModel {
   }
 
   buildAppData() {
-    this.appData = {
-      animals: this.animalsJSON.map(animal => ({ ...animal, inCart: false }))
-    };
+    this.appData = this.animalsJSON.map(animal => ({ ...animal, inCart: false }))
   }
 
   buildFilteredAppData(filter, search) {
-    this.lastFilteredAppData = this.appData.animals.filter(card => (filter === "all" || card.species === filter) && (!search.length || search.includes(card.breed)));
+    const filteredAppData = this.appData.filter(card => (filter === "all" || card.species === filter) && (!search.length || search.includes(card.breed)))
+    this.lastFilteredAppData = {
+      cards: filteredAppData,
+      totalPagesQuantity: Math.ceil(filteredAppData.length / siteSettings.cardsPerPage),
+      breeds: this.getBreeds(filteredAppData)
+    }
   }
 
   getAppData(page) {
@@ -34,9 +37,15 @@ export class AppModel {
     const sliceAnimalsArrEnd = siteSettings.cardsPerPage * page;
     const sliceAnimalsArrStart = sliceAnimalsArrEnd - siteSettings.cardsPerPage;
     return {
-      currentPage: page,
-      totalPagesQuantity: Math.ceil(this.lastFilteredAppData.length / siteSettings.cardsPerPage),
-      cards: this.lastFilteredAppData.slice(sliceAnimalsArrStart, sliceAnimalsArrEnd)
+      ...this.lastFilteredAppData,
+      cards: this.lastFilteredAppData.cards.slice(sliceAnimalsArrStart, sliceAnimalsArrEnd),
+      currentPage: page
     }
+  }
+
+  getBreeds(arrayOfCards) {
+    const breeds = {}
+    arrayOfCards.forEach(card => breeds[card.breed] = 'doesn\'t matter');
+    return Object.keys(breeds);
   }
 }

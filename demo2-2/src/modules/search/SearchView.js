@@ -1,14 +1,15 @@
-import { SearchTemplate } from './SearchTemplate.js'
+import { SearchTemplate } from "./SearchTemplate.js";
 
 export class SearchView {
   constructor(filterClickHandler) {
-    this.templater = new SearchTemplate()
-    document.querySelector('.filters').insertAdjacentHTML('afterbegin', this.templater.getSearchPanel())
-    new SlimSelect({select: '.select-breed'})
-    document.querySelector('.filter-tabs').addEventListener('click', filterClickHandler)
+    this.templater = new SearchTemplate();
+    document.querySelector(".filters").insertAdjacentHTML("afterbegin", this.templater.getSearchPanel());
+
+    this.filterLinksParentElement = document.querySelector(".filter-links-parent");
+    this.filterLinksParentElement.addEventListener("click", filterClickHandler);
   }
 
-  parseSearchPannel() {
-    
+  renderFilterLinks(activeLink) {
+    this.filterLinksParentElement.innerHTML = this.templater.getFilterLinks(activeLink);
   }
 }

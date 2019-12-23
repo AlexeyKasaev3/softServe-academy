@@ -8,7 +8,7 @@ export class AnimalsGridController {
 
     this.publisherAPI = publisherAPI;
     this.publisherAPI.subscribe(siteSettings.event.paginationPageChange, this.displayAnimalsGreed.bind(this));
-    this.publisherAPI.subscribe(siteSettings.event.filterClick, this.applyAnimalsGreedFilter.bind(this));
+    this.publisherAPI.subscribe(siteSettings.event.filterStatusUpdate, this.displayAnimalsGreed.bind(this));
 
     this.displayAnimalsGreed(siteSettings.defaultAnimalsGridPageNumber);
   }
@@ -20,10 +20,5 @@ export class AnimalsGridController {
       currentPage: data.currentPage,
       totalPagesQuantity: data.totalPagesQuantity
     });
-  }
-
-  applyAnimalsGreedFilter(target) {
-    this.model.buildFilteredAppData(target, ['labrador']);
-    this.displayAnimalsGreed();
   }
 }

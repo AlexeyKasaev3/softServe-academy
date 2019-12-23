@@ -20,10 +20,11 @@ export class PaginationView {
     this.currentPage = Number(currentPage);
     this.totalPagesQuantity = Number(totalPagesQuantity);
 
-    if (totalPagesQuantity < 2) {
-      return null;
+    if (this.totalPagesQuantity < 2) {
+      this.paginationDOMparent.style.visibility = 'hidden'
     } else {
       if (this.currentPage === 1) {
+        this.paginationDOMparent.style.visibility = 'visible'
         document.querySelector(".pagination-previous").classList.add("out-of-rich");
         document.querySelector(".pagination-next").classList.remove("out-of-rich");
       } else if (this.currentPage === totalPagesQuantity) {

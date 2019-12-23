@@ -8,7 +8,7 @@ const settings = {
     changePage: "change page",
     paginationPageChange: "pagination page change",
     animalsGridPageChange: "animals grid page change",
-    filterClick: "filter click"
+    filterStatusUpdate: "filter click"
   },
   page: {
     index: "index",

@@ -110,6 +110,10 @@ body {
   width: 300px;
 }
 
+.tabs a {
+  border-bottom-width: 5px;
+}
+
 @media (max-width: 768px) {
   .find-breed-form {
     margin: 30px 0 0;
