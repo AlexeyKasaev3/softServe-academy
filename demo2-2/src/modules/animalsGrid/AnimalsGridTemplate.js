@@ -1,7 +1,7 @@
 export class AnimalsGridTemplate {
   constructor() {}
 
-  getCardTemplate({ image, price, breed }) {
+  getCardTemplate({ id, image, price, breed }) {
     return `<div class="column is-full-mobile is-half-tablet is-one-third-widescreen is-one-quarter-fullhd">
     <div class="card">
       <div class="card-image">
@@ -21,7 +21,7 @@ export class AnimalsGridTemplate {
     
         <div class="content">
             <a href="#" class="button is-primary is-light">BUY</a>
-            <a href="#" class="button is-link is-light">DETAILS</a>
+            <a href="details-${breed}-${id}" class="button is-link is-light" data-details-link="${id}">DETAILS</a>
         </div>
       </div>
     </div>

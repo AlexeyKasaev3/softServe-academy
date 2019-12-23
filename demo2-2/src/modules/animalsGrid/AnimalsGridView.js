@@ -1,11 +1,14 @@
-import { AnimalsGridTemplate } from './AnimalsGridTemplate.js'
+import { AnimalsGridTemplate } from "./AnimalsGridTemplate.js";
 
 export class AnimalsGridView {
-  constructor() {
+  constructor(greedClickHandler) {
     this.templater = new AnimalsGridTemplate();
-    document.querySelector('.animals-greed').insertAdjacentHTML('beforebegin', this.templater.getCardsGridTemplate());
 
-    this.cardsParentElement = document.querySelector('.cards-parent')
+    this.animalsGreedElement = document.querySelector(".animals-greed");
+    this.animalsGreedElement.insertAdjacentHTML("afterbegin", this.templater.getCardsGridTemplate());
+    this.animalsGreedElement.addEventListener('click', greedClickHandler)
+
+    this.cardsParentElement = document.querySelector(".cards-parent");
   }
 
   renderAnimalsGrid(cards) {

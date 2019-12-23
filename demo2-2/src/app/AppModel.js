@@ -5,6 +5,7 @@ export class AppModel {
     this.dataSource = siteSettings.dataSourceURL;
     this.appData = null;
     this.lastFilteredAppData = null;
+    this.lastAnimalsDetailsId = null;
   }
 
   async fetchAndBuildAppData() {
@@ -26,7 +27,7 @@ export class AppModel {
     this.lastFilteredAppData = {
       cards: filteredAppData,
       totalPagesQuantity: Math.ceil(filteredAppData.length / siteSettings.cardsPerPage),
-      breeds: this.getBreeds(filteredAppData)
+      breeds: this.getBreeds(filteredAppData).sort()
     }
   }
 
@@ -47,5 +48,13 @@ export class AppModel {
     const breeds = {}
     arrayOfCards.forEach(card => breeds[card.breed] = 'doesn\'t matter');
     return Object.keys(breeds);
+  }
+
+  getAnimalById(animalId) {
+    return this.appData.filter(card => card.id === Number(animalId))[0]
+  }
+
+  setLastAnimalsDetailsId(animalId) {
+    this.lastAnimalsDetailsId = animalId;
   }
 }

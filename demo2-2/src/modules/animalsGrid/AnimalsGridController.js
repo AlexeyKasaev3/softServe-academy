@@ -4,7 +4,7 @@ import { AnimalsGridView } from "./AnimalsGridView.js";
 export class AnimalsGridController {
   constructor(model, publisherAPI) {
     this.model = model;
-    this.view = new AnimalsGridView();
+    this.view = new AnimalsGridView(this.handleAnimalsGreedClick.bind(this));
 
     this.publisherAPI = publisherAPI;
     this.publisherAPI.subscribe(siteSettings.event.paginationPageChange, this.displayAnimalsGreed.bind(this));
@@ -20,5 +20,14 @@ export class AnimalsGridController {
       currentPage: data.currentPage,
       totalPagesQuantity: data.totalPagesQuantity
     });
+  }
+
+  handleAnimalsGreedClick(event) {
+    event.preventDefault();
+    const detailsLinkId = event.target.getAttribute('data-details-link');
+    if(detailsLinkId) {
+      this.model.setLastAnimalsDetailsId(detailsLinkId)
+      this.publisherAPI.notify(siteSettings.event.changePage, siteSettings.page.animalDetails)
+    }
   }
 }
