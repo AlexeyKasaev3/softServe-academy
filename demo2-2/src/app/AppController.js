@@ -4,11 +4,12 @@ import { siteSettings } from "../share/siteSettings.js";
 
 import { IndexPageController } from "../pages/index/IndexPageController.js";
 import { AnimalsDetailsPageController } from "../pages/animalDetails/AnimalDetailsPageController.js";
+import { CartPageController } from '../pages/cart/CartPageController.js'
 
 export class AppController {
   constructor(publisherAPI) {
     this.model = new AppModel();
-    this.view = new AppView();
+    this.view = new AppView(this.handleCardLinkClick.bind(this));
     this.publisherAPI = publisherAPI;
     this.publisherAPI.subscribe(siteSettings.event.changePage, this.router.bind(this));
 
@@ -18,9 +19,13 @@ export class AppController {
     this.startApp();
   }
 
+  handleCardLinkClick() {
+    this.router(siteSettings.page.cart)
+  }
+
   startApp() {
     this.model.fetchAndBuildAppData().then(() => {
-      this.view.parseSiteTemplate();
+      this.view.renderSiteTemplate();
       this.rootAppContentElement = document.querySelector(`#${siteSettings.rootAppContentElementIDname}`);
       this.router(siteSettings.page.index);
     });
@@ -28,12 +33,16 @@ export class AppController {
 
   router(page = siteSettings.page.index) {
     this.clearRootContentElement();
+    this.publisherAPI.unsubscribeAll()
     switch (page) {
       case siteSettings.page.index:
         this.activePage = new IndexPageController(this.model, this.publisherAPI);
         break;
       case siteSettings.page.animalDetails:
         this.activePage = new AnimalsDetailsPageController(this.model, this.publisherAPI);
+        break;
+      case siteSettings.page.cart:
+        this.activePage = new CartPageController(this.model, this.publisherAPI);
         break;
     }
   }

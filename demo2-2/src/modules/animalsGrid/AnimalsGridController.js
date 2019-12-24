@@ -10,10 +10,10 @@ export class AnimalsGridController {
     this.publisherAPI.subscribe(siteSettings.event.paginationPageChange, this.displayAnimalsGreed.bind(this));
     this.publisherAPI.subscribe(siteSettings.event.filterStatusUpdate, this.displayAnimalsGreed.bind(this));
 
-    this.displayAnimalsGreed(siteSettings.defaultAnimalsGridPageNumber);
+    this.displayAnimalsGreed(this.model.lastAnimalsGridPageNum);
   }
 
-  displayAnimalsGreed(page = 1) {
+  displayAnimalsGreed(page = this.model.lastAnimalsGridPageNum) {
     const data = this.model.getAppData(page);
     this.view.renderAnimalsGrid(data.cards);
     this.publisherAPI.notify(siteSettings.event.animalsGridPageChange, {
@@ -24,10 +24,13 @@ export class AnimalsGridController {
 
   handleAnimalsGreedClick(event) {
     event.preventDefault();
-    const detailsLinkId = event.target.getAttribute('data-details-link');
-    if(detailsLinkId) {
-      this.model.setLastAnimalsDetailsId(detailsLinkId)
+    if(event.target.dataset.details_link) {
+      this.model.buildLastAnimalsDetailsCard(event.target.dataset.details_link)
       this.publisherAPI.notify(siteSettings.event.changePage, siteSettings.page.animalDetails)
+    } else if (event.target.dataset.buy_link) {
+      this.model.setAnimalIncart(event.target.dataset.buy_link);
+      this.displayAnimalsGreed(this.model.lastAnimalsGridPageNum)
     }
   }
 }
+

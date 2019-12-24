@@ -1,14 +1,16 @@
-import { AnimalsDetailsTemplate } from './AnimalDetailsTemplate.js'
+import { AnimalsDetailsTemplate } from "./AnimalDetailsTemplate.js";
 
 export class AnimalsDetailsView {
-  constructor(backButtonClickHandler) {
+  constructor(backButtonClickHandler, addToCartClickHandler) {
+    this.backButtonClickHandler = backButtonClickHandler;
+    this.addToCartClickHandler = addToCartClickHandler;
     this.templater = new AnimalsDetailsTemplate();
-    document.querySelector('.animals-details').insertAdjacentHTML('afterbegin', this.templater.getDetailsMarkup())
-    this.detailsParentElement = document.querySelector('.details-parent-element')
-    document.querySelector('.animals-details-back-button').addEventListener('click', backButtonClickHandler)
+    this.detailsParentElement = document.querySelector(".animals-details");
   }
 
   renderAnimalDetails(animalObj) {
-    this.detailsParentElement.innerHTML = `<img src="${animalObj.image}" />` + JSON.stringify(animalObj)
+    this.detailsParentElement.innerHTML = this.templater.getAnimalDetailsMarkup(animalObj);
+    document.querySelector(".add-to-cart-button").addEventListener("click", this.addToCartClickHandler);
+    document.querySelector(".animals-details-back-button").addEventListener("click", this.backButtonClickHandler);
   }
 }

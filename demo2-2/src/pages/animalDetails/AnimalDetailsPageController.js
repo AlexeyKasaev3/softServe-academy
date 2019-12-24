@@ -4,8 +4,6 @@ import { AnimalsDetailsPageTemplate } from './AnimalDetailsPageTemplate.js'
  
 export class AnimalsDetailsPageController {
   constructor(model, publisherAPI) {
-    this.view = new PageView()
-
     this.templater = new AnimalsDetailsPageTemplate();
     this.view = new PageView(this.templater.getPageMarkup());
 

@@ -2,10 +2,12 @@ import { siteSettings } from "../share/siteSettings.js";
 
 export class AppModel {
   constructor() {
-    this.dataSource = siteSettings.dataSourceURL;
     this.appData = null;
     this.lastFilteredAppData = null;
-    this.lastAnimalsDetailsId = null;
+    this.lastAnimalsGridPageNum = 1;
+    this.lastAnimalsGridFilter = "all";
+    this.lastAnimalGridSearch = [];
+    this.lastAnimalDetailsCard = null;
   }
 
   async fetchAndBuildAppData() {
@@ -15,46 +17,67 @@ export class AppModel {
   }
 
   async fetchAnimalsJSON() {
-    this.animalsJSON = await fetch(this.dataSource).then(response => response.json());
+    this.animalsJSON = await fetch(siteSettings.dataSourceURL).then(response => response.json());
   }
 
   buildAppData() {
-    this.appData = this.animalsJSON.map(animal => ({ ...animal, inCart: false }))
+    this.appData = this.animalsJSON.map(animal => ({ ...animal, inCart: false }));
   }
 
-  buildFilteredAppData(filter, search) {
-    const filteredAppData = this.appData.filter(card => (filter === "all" || card.species === filter) && (!search.length || search.includes(card.breed)))
+  buildFilteredAppData(filter = "all", search = []) {
+    this.lastAnimalsGridFilter = filter;
+    this.lastAnimalGridSearch = search;
+
+    const filteredAppData = this.appData.filter(card => (filter === "all" || card.species === filter) && (!search.length || search.includes(card.breed)));
     this.lastFilteredAppData = {
       cards: filteredAppData,
       totalPagesQuantity: Math.ceil(filteredAppData.length / siteSettings.cardsPerPage),
-      breeds: this.getBreeds(filteredAppData).sort()
-    }
+      breeds: this.getBreeds(this.lastAnimalsGridFilter).sort()
+    };
   }
 
-  getAppData(page) {
-    if(this.lastFilteredAppData === null) {
-      this.buildFilteredAppData('all', [])
+  getAppData(pageNum) {
+    if (this.lastFilteredAppData === null) {
+      this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalGridSearch);
     }
-    const sliceAnimalsArrEnd = siteSettings.cardsPerPage * page;
+
+    this.lastAnimalsGridPageNum = Number(pageNum);
+
+    const sliceAnimalsArrEnd = siteSettings.cardsPerPage * pageNum;
     const sliceAnimalsArrStart = sliceAnimalsArrEnd - siteSettings.cardsPerPage;
     return {
       ...this.lastFilteredAppData,
       cards: this.lastFilteredAppData.cards.slice(sliceAnimalsArrStart, sliceAnimalsArrEnd),
-      currentPage: page
-    }
+      currentPage: pageNum
+    };
   }
 
-  getBreeds(arrayOfCards) {
-    const breeds = {}
-    arrayOfCards.forEach(card => breeds[card.breed] = 'doesn\'t matter');
+  getBreeds(species) {
+    const breeds = {};
+    if (species === "all") {
+      this.appData.forEach(card => (breeds[card.breed] = null));
+    } else {
+      this.appData.filter(card => card.species === species).forEach(card => (breeds[card.breed] = null));
+    }
     return Object.keys(breeds);
   }
 
-  getAnimalById(animalId) {
-    return this.appData.filter(card => card.id === Number(animalId))[0]
+  buildLastAnimalsDetailsCard(animalId) {
+    this.lastAnimalDetailsCard = this.appData.filter(card => card.id === Number(animalId))[0];
   }
 
-  setLastAnimalsDetailsId(animalId) {
-    this.lastAnimalsDetailsId = animalId;
+  setAnimalIncart(animalId) {
+    const animalID = Number(animalId);
+    this.appData.forEach(card => {
+      if (card.id === animalID) card.inCart = true;
+    });
+    this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalGridSearch);
+    if (this.lastAnimalDetailsCard) {
+      this.buildLastAnimalsDetailsCard(animalId);
+    }
+  }
+
+  getItemsInCart() {
+    return this.appData.filter(card => card.inCart);
   }
 }

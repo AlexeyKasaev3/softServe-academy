@@ -7,8 +7,8 @@ export class SearchController {
     this.publisherAPI = publisherAPI;
     this.view = new SearchView(this.handleFilterPanelClick.bind(this));
 
-    this.activeFilterValue = "all";
-    this.activeSearchValue = [];
+    this.activeFilterValue = this.model.lastAnimalsGridFilter;
+    this.activeSearchValue = this.model.lastAnimalGridSearch;
 
     this.searchFieldAPI = new SlimSelect({
       select: ".select-breed",
@@ -18,7 +18,7 @@ export class SearchController {
     });
 
     this.view.renderFilterLinks(this.activeFilterValue);
-    this.fillSearchFieldWithVariants(this.model.lastFilteredAppData.breeds);
+    this.fillSearchFieldWithCurrentData(this.model.lastFilteredAppData.breeds, this.model.lastAnimalGridSearch);
   }
 
   handleFilterPanelClick(event) {
@@ -29,18 +29,21 @@ export class SearchController {
       this.activeSearchValue = [];
       this.model.buildFilteredAppData(this.activeFilterValue, this.activeSearchValue);
       this.view.renderFilterLinks(this.activeFilterValue);
-      this.fillSearchFieldWithVariants(this.model.lastFilteredAppData.breeds);
-      this.publisherAPI.notify(siteSettings.event.filterStatusUpdate);
+      this.fillSearchFieldWithCurrentData(this.model.lastFilteredAppData.breeds, []);
+      this.publisherAPI.notify(siteSettings.event.filterStatusUpdate, siteSettings.defaultAnimalsGridPageNumber);
     }
   }
 
   searchFiledHandler(searchFiledData) {
-    this.activeSearchValue = searchFiledData.map(option => option.value);
-    this.model.buildFilteredAppData(this.activeFilterValue, this.activeSearchValue);
-    this.publisherAPI.notify(siteSettings.event.filterStatusUpdate);
+    if(searchFiledData.length !== this.model.lastAnimalGridSearch.length) {
+      this.activeSearchValue = searchFiledData.map(option => option.value);
+      this.model.buildFilteredAppData(this.activeFilterValue, this.activeSearchValue);
+      this.publisherAPI.notify(siteSettings.event.filterStatusUpdate, siteSettings.defaultAnimalsGridPageNumber);
+    }
   }
 
-  fillSearchFieldWithVariants(breeds) {
+  fillSearchFieldWithCurrentData(breeds, currentSelectedBreeds) {
     this.searchFieldAPI.setData(breeds.map(breed => ({text: breed})))
+    this.searchFieldAPI.set(currentSelectedBreeds)
   }
 }

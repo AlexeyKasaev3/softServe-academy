@@ -4,7 +4,8 @@ export class Publisher {
     this.controles = {
       subscribe: this.subscribe.bind(this),
       unsubscribe: this.unsubscribe.bind(this),
-      notify: this.notify.bind(this)
+      notify: this.notify.bind(this),
+      unsubscribeAll: this.unsubscribeAll.bind(this)
     };
   }
 
@@ -19,6 +20,7 @@ export class Publisher {
   }
 
   notify(event, data) {
+    //console.log('NOTIFY', event, data, this.subscribes)
     this.checkEvent(event);
     this.subscribes[event].forEach(sb => sb(data));
   }
@@ -27,5 +29,9 @@ export class Publisher {
     if (!this.subscribes.hasOwnProperty(event)) {
       this.subscribes[event] = [];
     }
+  }
+
+  unsubscribeAll() {
+    this.subscribes = {changePage: this.subscribes.changePage}
   }
 }

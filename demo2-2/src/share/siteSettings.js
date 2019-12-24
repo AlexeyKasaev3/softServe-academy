@@ -5,10 +5,11 @@ const settings = {
   rootAppElementIDname: "root",
   rootAppContentElementIDname: "root-content",
   event: {
-    changePage: "change page",
-    paginationPageChange: "pagination page change",
-    animalsGridPageChange: "animals grid page change",
-    filterStatusUpdate: "filter click"
+    changePage: "changePage",
+    paginationPageChange: "paginationPageChange",
+    animalsGridPageChange: "animalsGridPageChange",
+    filterStatusUpdate: "filterStatusUpdate",
+    addAnimalToCart: "addAnimalToCart"
   },
   page: {
     index: "index",
