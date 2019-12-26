@@ -5,17 +5,17 @@ export class CartTemplate {
 
   static getCartItem({ id, breed, price, image }) {
     return `<div class="column is-full">
-      <div class="columns">
+      <div class="columns cart-card-content">
         <div class="column is-3">
           <div class="cart-item-image" style="background-image: url(${image})"></div>
         </div>
-        <div class="column is-7">
+        <div class="column is-6">
           <p>${breed}</p>
           <div>
             <a href="#" class="cart-remove-item" data-animal_id="${id}">remove from cart</a>
           </div>
         </div>
-        <div class="column is-2">
+        <div class="column is-3 has-text-right">
           $${price}
         </div>
       </div>

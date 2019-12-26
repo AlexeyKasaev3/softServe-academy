@@ -382,7 +382,7 @@ body {
 }
 
 .cart-item-image {
-  background-image: url(https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/1.jpg);
+  margin-left: auto;
   width: 100px;
   height: 100px;
   background-size: cover;
@@ -391,4 +391,12 @@ body {
   filter: grayscale(0.3);
   opacity: 0.8;
   box-shadow: 0 0 20px 0 #585858 inset;
+}
+
+.cart-page > .container {
+  max-width: 700px;
+}
+
+.cart-card-content {
+  align-items: center;
 }
