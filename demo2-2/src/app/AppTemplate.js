@@ -14,7 +14,6 @@ export class AppTemplate {
       </header>
       <main id="${siteSettings.rootAppContentElementIDname}"></main>
       <footer>
-        <a href="#" class="cart-link">CART</a> 
       </footer>
       </div>
       `;
