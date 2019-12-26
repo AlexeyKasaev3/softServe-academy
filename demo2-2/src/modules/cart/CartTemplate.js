@@ -10,12 +10,12 @@ export class CartTemplate {
           <div class="cart-item-image" style="background-image: url(${image})"></div>
         </div>
         <div class="column is-6">
-          <p>${breed}</p>
+          <p class="has-text-weight-bold is-size-5">${breed}</p>
           <div>
             <a href="#" class="cart-remove-item" data-animal_id="${id}">remove from cart</a>
           </div>
         </div>
-        <div class="column is-3 has-text-right">
+        <div class="column is-3 has-text-right is-size-4 has-text-weight-bold">
           $${price}
         </div>
       </div>
