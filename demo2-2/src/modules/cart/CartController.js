@@ -14,6 +14,9 @@ export class CartController {
     e.preventDefault();
     if (e.target.classList.contains("go-to-catalog-link")) {
       this.publisherAPI.notify(siteSettings.event.changePage, siteSettings.page.index);
+    } else if(e.target.classList.contains("cart-remove-item")) {
+      this.model.removeAnimalFromCart(e.target.dataset.animal_id)
+      this.view.renderCard(this.model.getItemsInCart());  
     }
   }
 }

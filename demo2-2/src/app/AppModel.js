@@ -84,6 +84,17 @@ export class AppModel {
     }
   }
 
+  removeAnimalFromCart(animalId) {
+    const animalID = Number(animalId);
+    this.appData.forEach(card => {
+      if (card.id === animalID) card.inCart = false;
+    });
+    this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalGridSearch);
+    if (this.lastAnimalDetailsCard) {
+      this.buildLastAnimalsDetailsCard(animalId);
+    }
+  }
+
   getItemsInCart() {
     return this.appData.filter(card => card.inCart);
   }
