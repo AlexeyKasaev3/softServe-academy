@@ -1,19 +1,18 @@
-import { siteSettings } from '../../share/siteSettings.js';
-import { PaginationTemplate } from './PaginationTemplate.js'
+import { siteSettings } from "../../share/siteSettings.js";
+import { PaginationTemplate } from "./PaginationTemplate.js";
 
 export class PaginationView {
   constructor(navClickHandler) {
-    this.templater = new PaginationTemplate;
+    this.templater = new PaginationTemplate();
 
     this.paginationDOMparent = document.querySelector(".pagination-container");
     this.template = new PaginationTemplate();
 
-    this.paginationDOMparent.insertAdjacentHTML('afterbegin', this.templater.getPaginationContainer());
+    this.paginationDOMparent.insertAdjacentHTML("afterbegin", this.templater.getPaginationContainer());
     this.paginationButtonsDOMparent = document.querySelector(".pagination-list");
 
     this.paginationDOMparent.addEventListener("click", this.routePaginationPanelClick.bind(this));
     this.navClickHandler = navClickHandler;
-
   }
 
   renderPagination(currentPage, totalPagesQuantity) {
@@ -21,10 +20,10 @@ export class PaginationView {
     this.totalPagesQuantity = Number(totalPagesQuantity);
 
     if (this.totalPagesQuantity < 2) {
-      this.paginationDOMparent.style.visibility = 'hidden'
+      this.paginationDOMparent.style.visibility = "hidden";
     } else {
       if (this.currentPage === 1) {
-        this.paginationDOMparent.style.visibility = 'visible'
+        this.paginationDOMparent.style.visibility = "visible";
         document.querySelector(".pagination-previous").classList.add("out-of-rich");
         document.querySelector(".pagination-next").classList.remove("out-of-rich");
       } else if (this.currentPage === totalPagesQuantity) {

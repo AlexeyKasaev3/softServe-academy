@@ -3,7 +3,7 @@ import { PageView } from "../PageView.js";
 
 import { AnimalsGridController } from "../../modules/animalsGrid/AnimalsGridController.js";
 import { PaginationController } from "../../modules/pagination/PaginationController.js";
-import { SearchController } from '../../modules/search/SearchController.js';
+import { SearchController } from "../../modules/search/SearchController.js";
 
 export class IndexPageController {
   constructor(model, publisherAPI) {
@@ -12,8 +12,8 @@ export class IndexPageController {
 
     this.view.renderPage();
 
-    this.paginationController = new PaginationController(publisherAPI)
-    this.animalsGreedController = new AnimalsGridController(model, publisherAPI)
-    this.searchController = new SearchController(model, publisherAPI)
+    this.paginationController = new PaginationController(publisherAPI);
+    this.animalsGreedController = new AnimalsGridController(model, publisherAPI);
+    this.searchController = new SearchController(model, publisherAPI);
   }
 }

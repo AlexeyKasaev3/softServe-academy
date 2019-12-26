@@ -6,7 +6,8 @@ export class PageView {
   }
 
   renderPage() {
-    document.querySelector(`#${siteSettings.rootAppContentElementIDname}`).insertAdjacentHTML("beforeend", this.templateStr);
+    document
+      .querySelector(`#${siteSettings.rootAppContentElementIDname}`)
+      .insertAdjacentHTML("beforeend", this.templateStr);
   }
 }
-  

@@ -1,7 +1,23 @@
 export class AnimalsDetailsTemplate {
   constructor() {}
 
-  getAnimalDetailsMarkup({ id, price, inCart, breed, image, gender, age, weight, color, is_sterile, hair, type, activity, water_type, temper }) {
+  getAnimalDetailsMarkup({
+    id,
+    price,
+    inCart,
+    breed,
+    image,
+    gender,
+    age,
+    weight,
+    color,
+    is_sterile,
+    hair,
+    type,
+    activity,
+    water_type,
+    temper
+  }) {
     return `<div class="container is-fluid">
     <div class="container">
       <section class="columns animal-card animal-details-page-card">
@@ -154,9 +170,9 @@ export class AnimalsDetailsTemplate {
         </div>
         <div class="animals-details-buttons has-text-right">
         <button class="button is-medium animals-details-back-button is-rounded">Back To Catalog</button>
-        <button class="button is-rounded ${inCart ? "is-warning" : "is-primary"} buy-button is-medium add-to-cart-button" data-animal_id="${id}">${
-          inCart ? "In Cart" : "Buy"
-        }</button>
+        <button class="button is-rounded ${
+          inCart ? "is-warning" : "is-primary"
+        } buy-button is-medium add-to-cart-button" data-animal_id="${id}">${inCart ? "In Cart" : "Buy"}</button>
         </div>
         </div>
       </section>

@@ -8,16 +8,16 @@ export class AppView {
   }
 
   renderSiteTemplate() {
-    document.querySelector(`#${siteSettings.rootAppElementIDname}`).insertAdjacentHTML("beforeend", this.templater.getSiteMarkup());
+    document
+      .querySelector(`#${siteSettings.rootAppElementIDname}`)
+      .insertAdjacentHTML("beforeend", this.templater.getSiteMarkup());
     document.querySelector(".site-navigation").addEventListener("click", this.siteNavClickHandler);
   }
 
   refreshNavigation(currentPage) {
-    [...document.querySelector(".site-navigation").children].forEach(link =>
-      link.classList.remove("current-link")
-    );
-    if(document.querySelector(`[href="${currentPage}"]`)) {
-      document.querySelector(`[href="${currentPage}"]`).classList.add('current-link')
+    [...document.querySelector(".site-navigation").children].forEach(link => link.classList.remove("current-link"));
+    if (document.querySelector(`[href="${currentPage}"]`)) {
+      document.querySelector(`[href="${currentPage}"]`).classList.add("current-link");
     }
   }
 }

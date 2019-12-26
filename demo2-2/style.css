@@ -144,7 +144,7 @@ body {
   }
 } */
 
-@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
 
 .site-header {
   background: url("images/pets-logo.png") top center/200px no-repeat;
@@ -152,7 +152,7 @@ body {
 }
 
 .site-header h1 {
-  font-family: 'Satisfy', cursive;
+  font-family: "Satisfy", cursive;
 }
 
 .filter-tabs {
@@ -188,7 +188,7 @@ body {
 
 .find-breed-label {
   font-size: 28px;
-  font-family: 'Satisfy', cursive;
+  font-family: "Satisfy", cursive;
   transform: translateY(2px);
   margin-right: 25px;
 }
@@ -261,7 +261,8 @@ body {
   box-shadow: 0 0 3px 0 #d0d0d0;
 }
 
-.ss-main .ss-content .ss-list .ss-option.ss-highlighted, .ss-main .ss-content .ss-list .ss-option:hover {
+.ss-main .ss-content .ss-list .ss-option.ss-highlighted,
+.ss-main .ss-content .ss-list .ss-option:hover {
   background-color: #00d1b2;
 }
 
@@ -288,7 +289,7 @@ body {
   padding-top: 100%;
   border-radius: 10px;
   filter: grayscale(30%);
-  opacity: .8;
+  opacity: 0.8;
   background-position: center;
   background-size: cover;
   box-shadow: 0 0 45px 0 #0000008c inset;
@@ -366,7 +367,7 @@ body {
   width: 100%;
   margin-top: 25px;
   filter: grayscale(30%);
-  opacity: .8;
+  opacity: 0.8;
   border-radius: 25px;
   transform: rotate(-1deg);
   box-shadow: -20px 20px 0 0 #9394c3, 0 0 45px 0 #0000008c inset;
@@ -378,4 +379,16 @@ body {
 
 .current-link {
   text-decoration: underline;
+}
+
+.cart-item-image {
+  background-image: url(https://alexeykasaev3.github.io/softServe-academy/demo2/animals-images/1.jpg);
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  filter: grayscale(0.3);
+  opacity: 0.8;
+  box-shadow: 0 0 20px 0 #585858 inset;
 }

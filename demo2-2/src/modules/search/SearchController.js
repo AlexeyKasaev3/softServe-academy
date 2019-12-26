@@ -15,7 +15,7 @@ export class SearchController {
       onChange: this.searchFiledHandler.bind(this),
       closeOnSelect: false,
       hideSelectedOption: true,
-      placeholder: 'Click to find...'
+      placeholder: "Click to find..."
     });
 
     this.view.renderFilterLinks(this.activeFilterValue);
@@ -36,7 +36,7 @@ export class SearchController {
   }
 
   searchFiledHandler(searchFiledData) {
-    if(searchFiledData.length !== this.model.lastAnimalGridSearch.length) {
+    if (searchFiledData.length !== this.model.lastAnimalGridSearch.length) {
       this.activeSearchValue = searchFiledData.map(option => option.value);
       this.model.buildFilteredAppData(this.activeFilterValue, this.activeSearchValue);
       this.publisherAPI.notify(siteSettings.event.filterStatusUpdate, siteSettings.defaultAnimalsGridPageNumber);
@@ -44,7 +44,7 @@ export class SearchController {
   }
 
   fillSearchFieldWithCurrentData(breeds, currentSelectedBreeds) {
-    this.searchFieldAPI.setData(breeds.map(breed => ({text: breed})))
-    this.searchFieldAPI.set(currentSelectedBreeds)
+    this.searchFieldAPI.setData(breeds.map(breed => ({ text: breed })));
+    this.searchFieldAPI.set(currentSelectedBreeds);
   }
 }

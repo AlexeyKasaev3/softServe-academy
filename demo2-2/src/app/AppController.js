@@ -1,10 +1,10 @@
 import { AppModel } from "./AppModel.js";
-import { AppView } from './AppView.js';
+import { AppView } from "./AppView.js";
 import { siteSettings } from "../share/siteSettings.js";
 
 import { IndexPageController } from "../pages/index/IndexPageController.js";
 import { AnimalsDetailsPageController } from "../pages/animalDetails/AnimalDetailsPageController.js";
-import { CartPageController } from '../pages/cart/CartPageController.js'
+import { CartPageController } from "../pages/cart/CartPageController.js";
 
 export class AppController {
   constructor(publisherAPI) {
@@ -15,14 +15,14 @@ export class AppController {
 
     this.rootAppContentElement = null;
     this.activePage = null;
-    
+
     this.startApp();
   }
 
   handleSiteNavigationClick(e) {
-    if(e.target.hasAttribute('href')) {
+    if (e.target.hasAttribute("href")) {
       e.preventDefault();
-      this.router(e.target.getAttribute('href'))
+      this.router(e.target.getAttribute("href"));
     }
   }
 
