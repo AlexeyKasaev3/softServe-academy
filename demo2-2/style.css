@@ -382,9 +382,8 @@ body {
 }
 
 .cart-item-image {
-  margin-left: auto;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  padding-top: 100%;
   background-size: cover;
   background-position: center;
   border-radius: 15px;
