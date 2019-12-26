@@ -24,13 +24,12 @@ export class AnimalsGridController {
 
   handleAnimalsGreedClick(event) {
     event.preventDefault();
-    if(event.target.dataset.details_link) {
-      this.model.buildLastAnimalsDetailsCard(event.target.dataset.details_link)
-      this.publisherAPI.notify(siteSettings.event.changePage, siteSettings.page.animalDetails)
+    if (event.target.dataset.details_link) {
+      this.model.buildLastAnimalsDetailsCard(event.target.dataset.details_link);
+      this.publisherAPI.notify(siteSettings.event.changePage, siteSettings.page.animalDetails);
     } else if (event.target.dataset.buy_link) {
       this.model.setAnimalIncart(event.target.dataset.buy_link);
-      this.displayAnimalsGreed(this.model.lastAnimalsGridPageNum)
+      this.displayAnimalsGreed(this.model.lastAnimalsGridPageNum);
     }
   }
 }
-

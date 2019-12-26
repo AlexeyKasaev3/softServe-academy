@@ -11,10 +11,11 @@ export class SearchController {
     this.activeSearchValue = this.model.lastAnimalGridSearch;
 
     this.searchFieldAPI = new SlimSelect({
-      select: ".select-breed",
+      select: "#select-breed",
       onChange: this.searchFiledHandler.bind(this),
       closeOnSelect: false,
-      hideSelectedOption: true
+      hideSelectedOption: true,
+      placeholder: 'Click to find...'
     });
 
     this.view.renderFilterLinks(this.activeFilterValue);

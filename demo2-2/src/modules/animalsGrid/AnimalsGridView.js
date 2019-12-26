@@ -6,7 +6,7 @@ export class AnimalsGridView {
 
     this.animalsGreedElement = document.querySelector(".animals-greed");
     this.animalsGreedElement.insertAdjacentHTML("afterbegin", this.templater.getCardsGridTemplate());
-    this.animalsGreedElement.addEventListener('click', greedClickHandler)
+    this.animalsGreedElement.addEventListener("click", greedClickHandler);
 
     this.cardsParentElement = document.querySelector(".cards-parent");
   }

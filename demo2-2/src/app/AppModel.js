@@ -21,14 +21,21 @@ export class AppModel {
   }
 
   buildAppData() {
-    this.appData = this.animalsJSON.map(animal => ({ ...animal, inCart: false }));
+    this.appData = this.animalsJSON.map(animal => ({
+      ...animal,
+      inCart: false,
+      age: this.birthDateToAge(animal.birth_date),
+      breed: this.titleCase(animal.breed)
+    }));
   }
 
   buildFilteredAppData(filter = "all", search = []) {
     this.lastAnimalsGridFilter = filter;
     this.lastAnimalGridSearch = search;
 
-    const filteredAppData = this.appData.filter(card => (filter === "all" || card.species === filter) && (!search.length || search.includes(card.breed)));
+    const filteredAppData = this.appData.filter(
+      card => (filter === "all" || card.species === filter) && (!search.length || search.includes(card.breed))
+    );
     this.lastFilteredAppData = {
       cards: filteredAppData,
       totalPagesQuantity: Math.ceil(filteredAppData.length / siteSettings.cardsPerPage),
@@ -79,5 +86,25 @@ export class AppModel {
 
   getItemsInCart() {
     return this.appData.filter(card => card.inCart);
+  }
+
+  birthDateToAge(miliseconds) {
+    return Math.ceil((new Date().getTime() - new Date(miliseconds).getTime()) / 2592000000);
+  }
+
+  titleCaseB(str) {
+    let splitStr = str.toLowerCase().split(" ");
+    for (let i = 0; i < splitStr.length; i++) {
+      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    return splitStr.join(" ");
+  }
+
+  titleCase(str) {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map(word => word.charAt(0).toUpperCase() + word.substring(1))
+      .join(" ");
   }
 }

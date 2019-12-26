@@ -9,7 +9,7 @@ import { CartPageController } from '../pages/cart/CartPageController.js'
 export class AppController {
   constructor(publisherAPI) {
     this.model = new AppModel();
-    this.view = new AppView(this.handleCardLinkClick.bind(this));
+    this.view = new AppView(this.handleSiteNavigationClick.bind(this));
     this.publisherAPI = publisherAPI;
     this.publisherAPI.subscribe(siteSettings.event.changePage, this.router.bind(this));
 
@@ -19,8 +19,11 @@ export class AppController {
     this.startApp();
   }
 
-  handleCardLinkClick() {
-    this.router(siteSettings.page.cart)
+  handleSiteNavigationClick(e) {
+    if(e.target.hasAttribute('href')) {
+      e.preventDefault();
+      this.router(e.target.getAttribute('href'))
+    }
   }
 
   startApp() {
@@ -33,7 +36,8 @@ export class AppController {
 
   router(page = siteSettings.page.index) {
     this.clearRootContentElement();
-    this.publisherAPI.unsubscribeAll()
+    this.publisherAPI.unsubscribeAll();
+    this.view.refreshNavigation(page);
     switch (page) {
       case siteSettings.page.index:
         this.activePage = new IndexPageController(this.model, this.publisherAPI);

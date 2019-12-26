@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
 
 body {
   min-height: 100vh;
@@ -6,6 +6,8 @@ body {
 
 .site-header {
   background: url("images/pets-logo.png") top center/200px no-repeat;
+  padding: 250px 0 20px 0;
+  font-family: 'Satisfy', cursive;
 }
 
 .site-header .title {
@@ -140,4 +142,240 @@ body {
     margin: 0 0 30px;
     width: 100%;
   }
+} */
+
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+
+.site-header {
+  background: url("images/pets-logo.png") top center/200px no-repeat;
+  padding: 250px 0 20px 0;
+}
+
+.site-header h1 {
+  font-family: 'Satisfy', cursive;
+}
+
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.filter-tabs .button {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid black;
+  margin: 0 10px;
+  font-weight: 700;
+}
+.filter-tabs .button.is-dark {
+  font-weight: 400;
+  width: 100px;
+  height: 100px;
+}
+
+.container-find-breed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background: url("images/sea_bg.jpg");
+  box-shadow: 0 0 3px 0 #d0d0d0;
+  margin-bottom: 100px;
+}
+
+.find-breed-label {
+  font-size: 28px;
+  font-family: 'Satisfy', cursive;
+  transform: translateY(2px);
+  margin-right: 25px;
+}
+
+.select-breed {
+  width: 500px;
+}
+
+.ss-main .ss-multi-selected .ss-add {
+  display: none;
+}
+
+.ss-main .ss-multi-selected {
+  min-height: 40px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 0 3px 0 #d0d0d0;
+}
+
+.ss-main .ss-multi-selected.ss-open-below,
+.ss-main .ss-multi-selected.ss-open-above {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.ss-main .ss-content .ss-search {
+  padding: 8px 8px 26px;
+}
+
+.ss-main .ss-content.ss-open {
+  border-radius: 20px;
+  top: calc(100% + 10px);
+  padding-bottom: 20px;
+  border: none;
+  box-shadow: 0 0 3px 0 #d0d0d0;
+}
+
+.ss-main .ss-multi-selected .ss-values {
+  padding: 3px;
+}
+
+.ss-main .ss-multi-selected .ss-values .ss-value {
+  height: 28px;
+  border-radius: 16px;
+  padding: 0 33px 0 16px;
+  font-size: 13px;
+  background-color: #00d1b2;
+  animation: none;
+  position: relative;
+  box-shadow: 0 0 2px 0 #d0d0d0;
+}
+
+.ss-main .ss-multi-selected .ss-values .ss-value .ss-value-delete {
+  position: absolute;
+  display: flex;
+  right: 0px;
+  width: 28px;
+  height: 28px;
+  border-radius: 16px;
+  margin: 0;
+  justify-content: center;
+  padding-top: 4px;
+  top: 0px;
+}
+
+.ss-main .ss-multi-selected .ss-values .ss-value .ss-value-delete:hover {
+  background-color: #7a7a7a;
+  box-shadow: 0 0 3px 0 #d0d0d0;
+}
+
+.ss-main .ss-content .ss-list .ss-option.ss-highlighted, .ss-main .ss-content .ss-list .ss-option:hover {
+  background-color: #00d1b2;
+}
+
+.ss-main .ss-content .ss-search input {
+  box-shadow: none;
+  border: none;
+  padding: 6px 0;
+  margin: 0 8px;
+  border-radius: 0;
+  border-bottom: 1px solid #a5a5a5;
+}
+
+.ss-main .ss-content .ss-search input:focus {
+  box-shadow: none;
+}
+
+.ss-open-above + .ss-content {
+  top: 30px !important;
+}
+
+.kaa-card-image {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 10px;
+  filter: grayscale(30%);
+  opacity: .8;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 45px 0 #0000008c inset;
+}
+
+.animal-card.columns {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.animal-card .animal-card-title {
+  display: inline;
+  font-size: 50px;
+  font-weight: 700;
+  color: #404040;
+  box-shadow: 0 -20px 0 0 #f39db6 inset;
+}
+
+.animal-card-desc {
+  display: flex;
+  align-items: center;
+  padding-right: 60px !important;
+}
+
+.animal-card .animal-card-price {
+  font-size: 45px;
+  font-weight: 700;
+  color: #b9b9b9;
+}
+
+.animal-card-content-wrapper > div + div {
+  margin-top: 10px;
+}
+
+.card-details-button,
+.animals-details-back-button {
+  margin-right: 10px;
+}
+
+.pagination-link.is-current {
+  border-color: #000000;
+  background-color: transparent;
+  color: initial;
+  box-shadow: 0 0 3px 0 #d0d0d0;
+}
+
+.out-of-rich {
+  visibility: hidden;
+}
+
+.animal-details-page-card .animal-card-title {
+  font-size: 60px;
+}
+
+.animal-details-list,
+.animals-details-buttons {
+  margin-top: 50px;
+  max-width: 500px;
+}
+
+.animal-details-list .level {
+  font-size: 25px;
+  color: #888;
+}
+
+.animal-details-list .level:hover {
+  text-decoration: underline;
+}
+
+.animal-details-list .level .level-left {
+  font-weight: bold;
+}
+
+.animals-details-image {
+  width: 100%;
+  margin-top: 25px;
+  filter: grayscale(30%);
+  opacity: .8;
+  border-radius: 25px;
+  transform: rotate(-1deg);
+  box-shadow: -20px 20px 0 0 #9394c3, 0 0 45px 0 #0000008c inset;
+}
+
+.site-navigation a {
+  margin: 0 10px;
+}
+
+.current-link {
+  text-decoration: underline;
 }

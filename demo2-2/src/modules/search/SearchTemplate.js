@@ -2,34 +2,20 @@ export class SearchTemplate {
   constructor() {}
 
   getSearchPanel() {
-    return `<nav class="tabs filter-tabs is-centered is-large has-text-weight-light is-marginless">
-    <ul class="filter-links-parent">
-    </ul>
+    return `<nav class="filter-tabs container is-fluid">
   </nav>
-  <div class="container-find-breed is-flex container is-fluid">
-    <div class="find-breed-text">Find Breed</div>
-    <form class="is-flex find-breed-form">
-      <select class="select-breed" multiple>
-      </select>
-    </form>
-  </div>`;
+  <form class="container-find-breed container is-fluid">
+    <label for="select-breed" class="find-breed-label">Find Breed</label>
+    <select id="select-breed" class="select-breed" multiple></select>
+  </form>`;
   }
 
   getFilterLinks(activeLink) {
-    return `<li ${activeLink === "all" ? 'class="is-active"' : ""}>
-    <a href="all">All pets</a>
-  </li>
-  <li ${activeLink === "cat" ? 'class="is-active"' : ""}>
-    <a href="cat">Cats</a>
-  </li>
-  <li ${activeLink === "dog" ? 'class="is-active"' : ""}>
-    <a href="dog">Dogs</a>
-  </li>
-  <li ${activeLink === "bird" ? 'class="is-active"' : ""}>
-    <a href="bird">Birds</a>
-  </li>
-  <li ${activeLink === "fish" ? 'class="is-active"' : ""}>
-    <a href="fish">Fish</a>
-  </li>`;
+    return `
+    <a href="all" class="${activeLink === "all" ? "button" : " button is-dark"}">All pets</a>
+    <a href="cat" class="${activeLink === "cat" ? "button" : " button is-dark"}">Cats</a>
+    <a href="dog" class="${activeLink === "dog" ? "button" : " button is-dark"}">Dogs</a>
+    <a href="bird" class="${activeLink === "bird" ? "button" : " button is-dark"}">Birds</a>
+    <a href="fish" class="${activeLink === "fish" ? "button" : " button is-dark"}">Fish</a>`;
   }
 }
