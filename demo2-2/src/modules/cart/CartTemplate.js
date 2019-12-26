@@ -23,7 +23,7 @@ export class CartTemplate {
   }
 
   static getEmptyCartMessage() {
-    return `<div class="empty-card-message section is-size-4 has-text-centered has-text-grey-dark">
+    return `<div class="empty-card-message column is-full section is-size-4 has-text-centered has-text-grey-dark">
       Cart is empty 😢.
       Maybe, you want to go to the <a class="go-to-catalog-link" href="${siteSettings.page.index}">catalog</a>
       to find the pet that is waiting for you 🐥!
