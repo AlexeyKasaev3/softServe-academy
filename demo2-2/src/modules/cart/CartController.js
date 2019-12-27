@@ -6,8 +6,16 @@ export class CartController {
     this.publisherAPI = publisherAPI;
     this.model = model;
     this.view = new CartView(this.handleGoodsListClick.bind(this));
+    this.displayCart(this.model.getItemsInCartData());
+  }
 
-    this.view.renderCard(this.model.getItemsInCart());
+  displayCart(itemsInCartData) {
+    if(itemsInCartData.itemsInCart.length) {
+      this.view.renderCartWithItems(itemsInCartData)
+      this.view.renderOrderForm();
+    } else {
+      this.view.renderEmptyCard();
+    }
   }
 
   handleGoodsListClick(e) {
@@ -16,7 +24,7 @@ export class CartController {
       this.publisherAPI.notify(siteSettings.event.changePage, siteSettings.page.index);
     } else if(e.target.classList.contains("cart-remove-item")) {
       this.model.removeAnimalFromCart(e.target.dataset.animal_id)
-      this.view.renderCard(this.model.getItemsInCart());  
+      this.displayCart(this.model.getItemsInCartData());  
     }
   }
 }

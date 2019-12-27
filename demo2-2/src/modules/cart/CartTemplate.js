@@ -3,6 +3,13 @@ import { siteSettings } from "../../share/siteSettings.js";
 export class CartTemplate {
   constructor() {}
 
+  static getCartContent(itemsInCartData) {
+    let returnValue = "";
+    returnValue += itemsInCartData.itemsInCart.map(item => CartTemplate.getCartItem(item)).join("");
+    returnValue += CartTemplate.getCartTotal(itemsInCartData.totalCartPrice);
+    return returnValue;
+  }
+
   static getCartItem({ id, breed, price, image }) {
     return `<div class="column is-full">
       <div class="columns cart-card-content">
@@ -19,6 +26,19 @@ export class CartTemplate {
           $${price}
         </div>
       </div>
+    </div>`;
+  }
+
+  static getCartTotal(cartTotalSum) {
+    return `<div class="column is-full">
+    <div class="level has-text-weight-medium is-size-3">
+      <div class="level-left">
+        <span class="level-item">Total</span>
+      </div>
+      <div class="level-right">
+        <span class="level-item has-text-weight-bold">$${cartTotalSum}</span>
+      </div>
+    </div>
     </div>`;
   }
 

@@ -95,8 +95,15 @@ export class AppModel {
     }
   }
 
-  getItemsInCart() {
-    return this.appData.filter(card => card.inCart);
+  getItemsInCartData() {
+    let totalCartPrice = 0;
+    const itemsInCart =  this.appData.filter(card => {
+      if(card.inCart) {
+        totalCartPrice += card.price;
+        return true
+      }
+    });
+    return {totalCartPrice, itemsInCart }
   }
 
   birthDateToAge(miliseconds) {
