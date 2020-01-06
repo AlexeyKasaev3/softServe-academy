@@ -1,7 +1,8 @@
 import { PageView } from "../PageView.js";
 import { CartPageTemplate } from "./CartPageTemplate.js";
 
-import { CartController } from "../../modules/cart/CartController.js";
+import { CartListController } from "../../modules/cartList/CartListController.js";
+import { CartOrderFormController } from "../../modules/cartOrderForm/CartOrderFormController.js";
 
 export class CartPageController {
   constructor(model, publisherAPI) {
@@ -9,6 +10,7 @@ export class CartPageController {
 
     this.view.renderPage();
 
-    this.cartControler = new CartController(model, publisherAPI);
+    this.cartListControler = new CartListController(model, publisherAPI);
+    this.cartOrderFormController = new CartOrderFormController(model, publisherAPI);
   }
 }

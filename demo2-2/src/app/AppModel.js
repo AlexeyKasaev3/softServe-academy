@@ -2,12 +2,14 @@ import { siteSettings } from "../share/siteSettings.js";
 
 export class AppModel {
   constructor() {
+    this.animalsJSON = null;
     this.appData = null;
     this.lastFilteredAppData = null;
     this.lastAnimalsGridPageNum = 1;
     this.lastAnimalsGridFilter = "all";
     this.lastAnimalGridSearch = [];
     this.lastAnimalDetailsCard = null;
+    this.orderFormStatus = siteSettings.orderFormStatus.close;
   }
 
   async fetchAndBuildAppData() {
@@ -93,6 +95,12 @@ export class AppModel {
     if (this.lastAnimalDetailsCard) {
       this.buildLastAnimalsDetailsCard(animalId);
     }
+  }
+
+  resetCart() {
+    this.appData.forEach(card => card.inCart = false);
+    this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalGridSearch);
+    this.lastAnimalDetailsCard = null;
   }
 
   getItemsInCartData() {

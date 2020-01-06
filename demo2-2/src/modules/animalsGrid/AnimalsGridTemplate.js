@@ -36,7 +36,6 @@ export class AnimalsGridTemplate {
   }
 
   renderImage(image) {
-    const rotateDeg = -1;
-    return `<div class="kaa-card-image" style="background-image: url(${image}); transform: rotate(${rotateDeg}deg)"></div>`;
+    return `<div class="kaa-card-image" style="background-image: url(${image}); transform: rotate(-1deg)"></div>`;
   }
 }

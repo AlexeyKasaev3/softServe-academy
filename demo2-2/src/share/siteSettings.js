@@ -9,12 +9,18 @@ const settings = {
     paginationPageChange: "paginationPageChange",
     animalsGridPageChange: "animalsGridPageChange",
     filterStatusUpdate: "filterStatusUpdate",
-    addAnimalToCart: "addAnimalToCart"
+    addAnimalToCart: "addAnimalToCart",
+    removeAnimalFromCart: "removeAnimalFromCart",
+    orderFormOpen: "orderFormOpen"
   },
   page: {
     index: "index",
     animalDetails: "animal details",
     cart: "cart"
+  },
+  orderFormStatus: {
+    open: 'open',
+    close: 'close'
   }
 };
 
