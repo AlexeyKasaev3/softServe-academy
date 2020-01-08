@@ -5,7 +5,10 @@ export class SearchController {
   constructor(model, publisherAPI) {
     this.model = model;
     this.publisherAPI = publisherAPI;
-    this.view = new SearchView(this.handleFilterPanelClick.bind(this));
+    this.view = new SearchView(
+      this.handleFilterPanelClick.bind(this),
+      this.handleSortPanelClick.bind(this)
+      );
 
     this.activeFilterValue = this.model.lastAnimalsGridFilter;
     this.activeSearchValue = this.model.lastAnimalGridSearch;
@@ -20,6 +23,7 @@ export class SearchController {
 
     this.view.renderFilterLinks(this.activeFilterValue);
     this.fillSearchFieldWithCurrentData(this.model.lastFilteredAppData.breeds, this.model.lastAnimalGridSearch);
+    this.view.renderSortLinks(this.model.lastAnimalsGridSortMethod);
   }
 
   handleFilterPanelClick(event) {
@@ -31,6 +35,17 @@ export class SearchController {
       this.model.buildFilteredAppData(this.activeFilterValue, this.activeSearchValue);
       this.view.renderFilterLinks(this.activeFilterValue);
       this.fillSearchFieldWithCurrentData(this.model.lastFilteredAppData.breeds, []);
+      this.publisherAPI.notify(siteSettings.event.filterStatusUpdate, siteSettings.defaultAnimalsGridPageNumber);
+    }
+  }
+
+  handleSortPanelClick(event) {
+    event.preventDefault();
+    console.log('here');
+    const sortMethod = event.target.getAttribute("href");
+    if(sortMethod) {
+      this.model.buildFilteredAppData(this.activeFilterValue, this.activeSearchValue, sortMethod);
+      this.view.renderSortLinks(sortMethod);
       this.publisherAPI.notify(siteSettings.event.filterStatusUpdate, siteSettings.defaultAnimalsGridPageNumber);
     }
   }

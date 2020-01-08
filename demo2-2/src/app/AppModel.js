@@ -16,7 +16,8 @@ export class AppModel {
     this.lastFilteredAppData = null;
     this.lastAnimalsGridPageNum = 1;
     this.lastAnimalsGridFilter = "all";
-    this.lastAnimalGridSearch = [];
+    this.lastAnimalsGridSearch = [];
+    this.lastAnimalsGridSortMethod = 'age-up';
     this.lastAnimalDetailsCard = null;
     this.orderFormStatus = siteSettings.orderFormStatus.close;
     this.currentPage = siteSettings.page.index;
@@ -46,13 +47,30 @@ export class AppModel {
     this.saveStateInSessionStorage();
   }
 
-  buildFilteredAppData(filter = "all", search = []) {
+  buildFilteredAppData(filter = "all", search = [], sortMethod = 'age-up') {
     this.lastAnimalsGridFilter = filter;
     this.lastAnimalGridSearch = search;
+    this.lastAnimalsGridSortMethod = sortMethod;
 
-    const filteredAppData = this.appData.filter(
+    let filteredAppData = this.appData.filter(
       card => (filter === "all" || card.species === filter) && (!search.length || search.includes(card.breed))
     );
+
+    switch(sortMethod) {
+      case 'age-up':
+        filteredAppData = filteredAppData.sort((a, b) => a.age - b.age);
+        break;
+      case 'age-down':
+        filteredAppData = filteredAppData.sort((a, b) => b.age - a.age);
+        break;
+      case 'price-up':
+        filteredAppData = filteredAppData.sort((a, b) => a.price - b.price);
+        break;
+      case 'down-down':
+        filteredAppData = filteredAppData.sort((a, b) => b.price - a.price);
+        break;
+    }
+
     this.lastFilteredAppData = {
       cards: filteredAppData,
       totalPagesQuantity: Math.ceil(filteredAppData.length / siteSettings.cardsPerPage),

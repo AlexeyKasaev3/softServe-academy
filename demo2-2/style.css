@@ -37,6 +37,10 @@
   height: 150px;
   background: url("images/sea_bg.jpg");
   box-shadow: 0 0 3px 0 #d0d0d0;
+  margin-bottom: 10px;
+}
+
+.sort-links {
   margin-bottom: 100px;
 }
 
@@ -295,4 +299,9 @@
   margin-bottom: 30px;
   color: white;
   font-size: 30px;
+}
+
+.sort-options a {
+  color: inherit;
+  margin: 0 5px;
 }
