@@ -49,7 +49,7 @@ export class AppModel {
 
   buildFilteredAppData(filter = "all", search = [], sortMethod = this.lastAnimalsGridSortMethod) {
     this.lastAnimalsGridFilter = filter;
-    this.lastAnimalGridSearch = search;
+    this.lastAnimalsGridSearch = search;
     this.lastAnimalsGridSortMethod = sortMethod;
 
     let filteredAppData = this.appData.filter(
@@ -81,7 +81,7 @@ export class AppModel {
 
   getAppData(pageNum) {
     if (this.lastFilteredAppData === null) {
-      this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalGridSearch);
+      this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalsGridSearch);
     }
 
     this.lastAnimalsGridPageNum = Number(pageNum);
@@ -116,7 +116,7 @@ export class AppModel {
     this.appData.forEach(card => {
       if (card.id === animalID) card.inCart = true;
     });
-    this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalGridSearch);
+    this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalsGridSearch);
     if (this.lastAnimalDetailsCard) {
       this.buildLastAnimalsDetailsCard(animalId);
     }
@@ -128,7 +128,7 @@ export class AppModel {
     this.appData.forEach(card => {
       if (card.id === animalID) card.inCart = false;
     });
-    this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalGridSearch);
+    this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalsGridSearch);
     if (this.lastAnimalDetailsCard) {
       this.buildLastAnimalsDetailsCard(animalId);
     }

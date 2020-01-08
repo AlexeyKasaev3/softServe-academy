@@ -11,7 +11,7 @@ export class SearchController {
       );
 
     this.activeFilterValue = this.model.lastAnimalsGridFilter;
-    this.activeSearchValue = this.model.lastAnimalGridSearch;
+    this.activeSearchValue = this.model.lastAnimalsGridSearch;
 
     this.searchFieldAPI = new SlimSelect({
       select: "#select-breed",
@@ -22,7 +22,7 @@ export class SearchController {
     });
 
     this.view.renderFilterLinks(this.activeFilterValue);
-    this.fillSearchFieldWithCurrentData(this.model.lastFilteredAppData.breeds, this.model.lastAnimalGridSearch);
+    this.fillSearchFieldWithCurrentData(this.model.lastFilteredAppData.breeds, this.model.lastAnimalsGridSearch);
     this.view.renderSortLinks(this.model.lastAnimalsGridSortMethod);
   }
 
@@ -50,7 +50,7 @@ export class SearchController {
   }
 
   searchFiledHandler(searchFiledData) {
-    if (searchFiledData.length !== this.model.lastAnimalGridSearch.length) {
+    if (searchFiledData.length !== this.model.lastAnimalsGridSearch.length) {
       this.activeSearchValue = searchFiledData.map(option => option.value);
       this.model.buildFilteredAppData(this.activeFilterValue, this.activeSearchValue);
       this.publisherAPI.notify(siteSettings.event.filterStatusUpdate, siteSettings.defaultAnimalsGridPageNumber);
