@@ -20,7 +20,6 @@ export class Publisher {
   }
 
   notify(event, data) {
-    //console.log('NOTIFY', event, data, this.subscribes)
     this.checkEvent(event);
     this.subscribes[event].forEach(sb => sb(data));
   }

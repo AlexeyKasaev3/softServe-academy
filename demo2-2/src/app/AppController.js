@@ -32,7 +32,6 @@ export class AppController {
   }
 
   router(page) {
-    //console.log(page = this.model.currentPage)
     this.clearRootContentElement();
     this.publisherAPI.unsubscribeAll();
     this.view.refreshNavigation(page);

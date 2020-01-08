@@ -41,7 +41,6 @@ export class SearchController {
 
   handleSortPanelClick(event) {
     event.preventDefault();
-    console.log('here');
     const sortMethod = event.target.getAttribute("href");
     if(sortMethod) {
       this.model.buildFilteredAppData(this.activeFilterValue, this.activeSearchValue, sortMethod);

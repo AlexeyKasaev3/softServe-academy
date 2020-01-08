@@ -47,7 +47,7 @@ export class AppModel {
     this.saveStateInSessionStorage();
   }
 
-  buildFilteredAppData(filter = "all", search = [], sortMethod = 'age-up') {
+  buildFilteredAppData(filter = "all", search = [], sortMethod = this.lastAnimalsGridSortMethod) {
     this.lastAnimalsGridFilter = filter;
     this.lastAnimalGridSearch = search;
     this.lastAnimalsGridSortMethod = sortMethod;
