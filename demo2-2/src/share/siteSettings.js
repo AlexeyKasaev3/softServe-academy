@@ -26,7 +26,7 @@ const settings = {
   },
   telegramBot: {
     APIkey: "1056859763:AAGftWl4vMDB78pdGub2xdZvd-sFAZ6YEc4",
-    chatID: 343471857
+    chatID: -377489566
   }
 };
 
