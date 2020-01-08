@@ -2,40 +2,40 @@ export class CartOrderFormTemplate {
   constructor() {}
 
   static getOrderForm() {
-    return `<div class="card-order-form-wrapper">
+    return `<div class="card-order-form-wrapper section has-background-white-ter">
       <form class="card-order-form">
       <div class="card-order-form__input card-order-form__input_name">
     <label>
       <p>Name*</p>
-      <input name="name" />  
+      <input class="input is-rounded" name="name" />  
     </label>
     <div class="input-error input-error_name has-text-danger"></div>
     </div>
     <div class="card-order-form__input card-order-form__phone">
     <label>
       <p>Phone*</p>
-      <input name="phone" />  
+      <input class="input is-rounded" name="phone" />  
     </label>
     <div class="input-error input-error_phone has-text-danger"></div>
     </div>
     <div class="card-order-form__input card-order-form__address">
     <label>
       <p>Address*</p>
-      <input name="address" />  
+      <input class="input is-rounded" name="address" />  
     </label>
     <div class="input-error input-error_address has-text-danger"></div>
     </div>
     <div class="card-order-form__input card-order-form__mail">
     <label>
       <p>Mail*</p>
-      <input name="mail" />  
+      <input class="input is-rounded" name="mail" />  
     </label>
     <div class="input-error input-error_mail has-text-danger"></div>
     </div>
     <div class="card-order-form__input card-order-form__notes">
     <label>
       <p>Notes</p>
-      <input name="notes" />  
+      <input class="input is-rounded" name="notes" />  
     </label>
     <div class="input-error input-error_notes has-text-danger"></div>
     </div>

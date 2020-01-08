@@ -2,6 +2,15 @@ import { siteSettings } from "../share/siteSettings.js";
 
 export class AppModel {
   constructor() {
+    const stateFromSessionStorage = this.getStateFromSessionStorage();
+    if (stateFromSessionStorage) {
+      this.setModelStateFromSessionStorage(stateFromSessionStorage);
+    } else {
+      this.setInitialModelState();
+    }
+  }
+
+  setInitialModelState() {
     this.animalsJSON = null;
     this.appData = null;
     this.lastFilteredAppData = null;
@@ -10,6 +19,11 @@ export class AppModel {
     this.lastAnimalGridSearch = [];
     this.lastAnimalDetailsCard = null;
     this.orderFormStatus = siteSettings.orderFormStatus.close;
+    this.currentPage = siteSettings.page.index;
+  }
+
+  setModelStateFromSessionStorage(stateFromSessionStorage) {
+    Object.keys(stateFromSessionStorage).forEach(key => (this[key] = stateFromSessionStorage[key]));
   }
 
   async fetchAndBuildAppData() {
@@ -29,6 +43,7 @@ export class AppModel {
       age: this.birthDateToAge(animal.birth_date),
       breed: this.titleCase(animal.breed)
     }));
+    this.saveStateInSessionStorage();
   }
 
   buildFilteredAppData(filter = "all", search = []) {
@@ -43,6 +58,7 @@ export class AppModel {
       totalPagesQuantity: Math.ceil(filteredAppData.length / siteSettings.cardsPerPage),
       breeds: this.getBreeds(this.lastAnimalsGridFilter).sort()
     };
+    this.saveStateInSessionStorage();
   }
 
   getAppData(pageNum) {
@@ -51,6 +67,7 @@ export class AppModel {
     }
 
     this.lastAnimalsGridPageNum = Number(pageNum);
+    this.saveStateInSessionStorage();
 
     const sliceAnimalsArrEnd = siteSettings.cardsPerPage * pageNum;
     const sliceAnimalsArrStart = sliceAnimalsArrEnd - siteSettings.cardsPerPage;
@@ -73,6 +90,7 @@ export class AppModel {
 
   buildLastAnimalsDetailsCard(animalId) {
     this.lastAnimalDetailsCard = this.appData.filter(card => card.id === Number(animalId))[0];
+    this.saveStateInSessionStorage();
   }
 
   setAnimalIncart(animalId) {
@@ -84,6 +102,7 @@ export class AppModel {
     if (this.lastAnimalDetailsCard) {
       this.buildLastAnimalsDetailsCard(animalId);
     }
+    this.saveStateInSessionStorage();
   }
 
   removeAnimalFromCart(animalId) {
@@ -95,23 +114,18 @@ export class AppModel {
     if (this.lastAnimalDetailsCard) {
       this.buildLastAnimalsDetailsCard(animalId);
     }
-  }
-
-  resetCart() {
-    this.appData.forEach(card => card.inCart = false);
-    this.buildFilteredAppData(this.lastAnimalsGridFilter, this.lastAnimalGridSearch);
-    this.lastAnimalDetailsCard = null;
+    this.saveStateInSessionStorage();
   }
 
   getItemsInCartData() {
     let totalCartPrice = 0;
-    const itemsInCart =  this.appData.filter(card => {
-      if(card.inCart) {
+    const itemsInCart = this.appData.filter(card => {
+      if (card.inCart) {
         totalCartPrice += card.price;
-        return true
+        return true;
       }
     });
-    return {totalCartPrice, itemsInCart }
+    return { totalCartPrice, itemsInCart };
   }
 
   birthDateToAge(miliseconds) {
@@ -124,5 +138,34 @@ export class AppModel {
       .split(" ")
       .map(word => word.charAt(0).toUpperCase() + word.substring(1))
       .join(" ");
+  }
+
+  saveStateInSessionStorage() {
+    sessionStorage.setItem(siteSettings.sessionStorageKey, JSON.stringify(this));
+  }
+
+  getStateFromSessionStorage() {
+    const dataFromSessionStorage = sessionStorage.getItem(siteSettings.sessionStorageKey);
+    if (dataFromSessionStorage) {
+      return JSON.parse(dataFromSessionStorage);
+    } else {
+      return false;
+    }
+  }
+
+  setOrderFormStatus(status) {
+    this.orderFormStatus = status;
+    this.saveStateInSessionStorage();
+  }
+
+  setCurrentPage(page) {
+    this.currentPage = page;
+    this.saveStateInSessionStorage();
+  }
+
+  restoreInitialAppState() {
+    sessionStorage.clear();
+    this.setInitialModelState();
+    this.fetchAndBuildAppData();
   }
 }

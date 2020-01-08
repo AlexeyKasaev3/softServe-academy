@@ -32,6 +32,6 @@ export class Publisher {
   }
 
   unsubscribeAll() {
-    this.subscribes = { changePage: this.subscribes.changePage };
+    this.subscribes = { changePage: this.subscribes.changePage, orderFormSubmited: this.subscribes.orderFormSubmited };
   }
 }

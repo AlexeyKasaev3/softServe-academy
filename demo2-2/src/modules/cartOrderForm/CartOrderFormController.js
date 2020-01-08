@@ -38,7 +38,8 @@ export class CartOrderFormController {
     this.publisherAPI.notify(siteSettings.event.orderFormOpen, true);
   }
 
-  handleCancelOrderButtonClick() {
+  handleCancelOrderButtonClick(event) {
+    event.preventDefault();
     this.model.orderFormStatus = siteSettings.orderFormStatus.close;
     this.displayCartOrderForm();
     this.publisherAPI.notify(siteSettings.event.orderFormOpen, false);
@@ -59,9 +60,10 @@ export class CartOrderFormController {
     if(!isValidateComplete) {
       inputs.forEach(input => this.handleFormFiledBlur(input));
     } else {
-      alert('OK!')
+      const customerData = {};
+      inputs.forEach(input => customerData[input.getAttribute('name')] = input.value)
       this.view.renderOrderIsSentMessage();
-      this.model.resetCart();
+      this.publisherAPI.notify(siteSettings.event.orderFormSubmited, customerData)
     }
   }
 

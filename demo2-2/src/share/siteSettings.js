@@ -4,6 +4,7 @@ const settings = {
   defaultAnimalsGridPageNumber: 1,
   rootAppElementIDname: "root",
   rootAppContentElementIDname: "root-content",
+  sessionStorageKey: "df44kjhf32487dfkhj",
   event: {
     changePage: "changePage",
     paginationPageChange: "paginationPageChange",
@@ -11,7 +12,8 @@ const settings = {
     filterStatusUpdate: "filterStatusUpdate",
     addAnimalToCart: "addAnimalToCart",
     removeAnimalFromCart: "removeAnimalFromCart",
-    orderFormOpen: "orderFormOpen"
+    orderFormOpen: "orderFormOpen",
+    orderFormSubmited: "orderFormSubmited"
   },
   page: {
     index: "index",
@@ -19,8 +21,12 @@ const settings = {
     cart: "cart"
   },
   orderFormStatus: {
-    open: 'open',
-    close: 'close'
+    open: "open",
+    close: "close"
+  },
+  telegramBot: {
+    APIkey: "1056859763:AAGftWl4vMDB78pdGub2xdZvd-sFAZ6YEc4",
+    chatID: 343471857
   }
 };
 

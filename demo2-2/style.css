@@ -257,3 +257,42 @@
 .cart-goods-list.columns {
   margin-bottom: 50px;
 }
+
+.card-order-form label>p,
+.input-error {
+  margin: 0 0 0 16px;
+  min-height: 25px;
+}
+
+.card-order-form__input {
+  margin-bottom: 15px;
+}
+
+.order-form-buttons-wrapper {
+  margin-top: 40px;
+}
+
+.checkout-order-button,
+.card-order-form-wrapper {
+  margin-bottom: 50px;
+}
+
+.order-sent-message-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #0000009e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.order-sent-message-wrapper p {
+  margin-bottom: 30px;
+  color: white;
+  font-size: 30px;
+}
