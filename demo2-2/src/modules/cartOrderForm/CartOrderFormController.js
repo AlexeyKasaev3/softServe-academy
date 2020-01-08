@@ -81,7 +81,7 @@ export class CartOrderFormController {
     const fieldName = input.getAttribute("name");
     const fieldValue = input.value.trim();
 
-    const requiredFieldMessage = "is field is required";
+    const requiredFieldMessage = "this field is required";
 
     let error = "";
 
