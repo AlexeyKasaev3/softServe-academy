@@ -26,7 +26,7 @@ let date = Date.now();
 const result = data.map((item, i) => {
   date = date - 1000 * 60 * 60 * 60 * 24;
   return {
-    id: `news${i + 1}`,
+    id: i + 1,
     date: date,
     title: item,
     image: `https://raw.githubusercontent.com/AlexeyKasaev3/softServe-academy/master/demo-3-data/images/${i + 1}.jpg`,
